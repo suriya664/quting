@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initRTL();
     initFloatingFabrics();
     initScrollReveal();
 });
@@ -26,9 +27,42 @@ function initTheme() {
 }
 
 function updateThemeIcon(theme) {
-    const icon = document.querySelector('.theme-toggle i');
-    if (!icon) return;
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    const icons = document.querySelectorAll('.theme-toggle i');
+    icons.forEach(icon => {
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
+}
+
+/* RTL Support */
+function initRTL() {
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
+    if (rtlToggles.length === 0) return;
+
+    const isRTL = localStorage.getItem('rtl') === 'true';
+    if (isRTL) {
+        document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+    }
+    updateRTLIcon(isRTL);
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir');
+            const nextRTL = currentDir === 'ltr';
+
+            document.documentElement.setAttribute('dir', nextRTL ? 'rtl' : 'ltr');
+            localStorage.setItem('rtl', nextRTL);
+            updateRTLIcon(nextRTL);
+        });
+    });
+}
+
+function updateRTLIcon(isRTL) {
+    const icons = document.querySelectorAll('.rtl-toggle i');
+    icons.forEach(icon => {
+        icon.className = isRTL ? 'fas fa-align-right' : 'fas fa-align-left';
+    });
 }
 
 /* Floating Fabric Swatches */
@@ -96,8 +130,8 @@ function animatePatches(grid) {
     });
 }
 
-/* Utility: Mobile Menu (to be added to header template) */
+/* Utility: Mobile Menu */
 function toggleMobileMenu() {
     const nav = document.querySelector('nav');
-    nav.classList.toggle('mobile-active');
+    if (nav) nav.classList.toggle('mobile-active');
 }
