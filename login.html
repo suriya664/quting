@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Member Portal - Quilting Guild</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-fabric-collage">
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="auth-wrapper">
+        <div class="auth-card card fabric-texture quilted-border reveal">
+            <div class="auth-logo">
+                <a href="index.html">
+                    <i class="fas fa-quilt fa-3x color-primary"></i>
+                    <h2 class="stitched-text mt-10">Our Guild</h2>
+                </a>
+            </div>
+
+            <h3 class="mt-20">Sign In to Member Portal</h3>
+            <p class="text-muted">Welcome back, quilter!</p>
+
+            <form class="auth-form mt-40">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-input" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group mt-20">
+                    <div class="flex-between">
+                        <label>Password</label>
+                        <a href="#" class="text-link" style="font-size: 0.8rem;">Forgot?</a>
+                    </div>
+                    <div class="password-input">
+                        <input type="password" class="form-input" placeholder="••••••••" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group mt-20">
+                    <label class="mentor-toggle">
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-fabric w-full mt-20">Sign In</button>
+            </form>
+
+            <p class="mt-40">Not a member yet? <a href="register.html" class="color-primary font-bold">Join our
+                    guild</a></p>
+        </div>
+    </div>
+
+    <script src="js/animations.js"></script>
+    <style>
+        .bg-fabric-collage {
+            background-color: var(--bg-primary);
+            background-image: url('https://images.unsplash.com/photo-1604521376281-17f697b68d76?w=600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .bg-fabric-collage::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 249, 240, 0.9);
+            z-index: 0;
+        }
+
+        [data-theme="dark"] .bg-fabric-collage::after {
+            background: rgba(28, 20, 16, 0.9);
+        }
+
+        .auth-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .auth-card {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .auth-logo a {
+            display: block;
+        }
+
+        .password-input {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .text-link {
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+    </style>
+</body>
+
+</html>

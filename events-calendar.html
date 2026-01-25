@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Calendar - Quilting Guild</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html" class="active">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Member
+                    Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero reveal">
+        <div class="container">
+            <h1 class="stitched-text">Guild Events & Workshops</h1>
+            <p>Find our next meeting, social bee, or hands-on class.</p>
+        </div>
+    </section>
+
+    <!-- Calendar Controls -->
+    <section class="section-padding" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="flex-between mb-40">
+                <div class="cal-nav">
+                    <button class="btn btn-secondary btn-sm"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <h2 class="inline-block mx-20" style="vertical-align: middle;">February 2026</h2>
+                    <button class="btn btn-secondary btn-sm">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="cal-legend">
+                    <span class="badge event-blue">Meetings</span>
+                    <span class="badge event-green">Workshops</span>
+                    <span class="badge event-yellow">Social</span>
+                    <span class="badge event-red">Shows</span>
+                    <span class="badge event-purple">Charity</span>
+                </div>
+            </div>
+
+            <div class="calendar-grid-mock reveal">
+                <!-- Headers -->
+                <div class="cal-header">Sun</div>
+                <div class="cal-header">Mon</div>
+                <div class="cal-header">Tue</div>
+                <div class="cal-header">Wed</div>
+                <div class="cal-header">Thu</div>
+                <div class="cal-header">Fri</div>
+                <div class="cal-header">Sat</div>
+
+                <!-- Week 1 -->
+                <div class="cal-cell"><span class="cal-date">1</span></div>
+                <div class="cal-cell"><span class="cal-date">2</span></div>
+                <div class="cal-cell"><span class="cal-date">3</span></div>
+                <div class="cal-cell">
+                    <span class="cal-date">4</span>
+                    <div class="cal-event event-blue">7pm: Monthly Meeting</div>
+                </div>
+                <div class="cal-cell"><span class="cal-date">5</span></div>
+                <div class="cal-cell"><span class="cal-date">6</span></div>
+                <div class="cal-cell"><span class="cal-date">7</span></div>
+
+                <!-- Week 2 -->
+                <div class="cal-cell"><span class="cal-date">8</span></div>
+                <div class="cal-cell"><span class="cal-date">9</span></div>
+                <div class="cal-cell"><span class="cal-date">10</span></div>
+                <div class="cal-cell"><span class="cal-date">11</span></div>
+                <div class="cal-cell"><span class="cal-date">12</span></div>
+                <div class="cal-cell"><span class="cal-date">13</span></div>
+                <div class="cal-cell">
+                    <span class="cal-date">14</span>
+                    <div class="cal-event event-yellow">1pm: Valentine Tea</div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="cal-cell">
+                    <span class="cal-date">15</span>
+                    <div class="cal-event event-green">10am: Paper Piecing Workshop</div>
+                </div>
+                <div class="cal-cell"><span class="cal-date">16</span></div>
+                <div class="cal-cell"><span class="cal-date">17</span></div>
+                <div class="cal-cell"><span class="cal-date">18</span></div>
+                <div class="cal-cell"><span class="cal-date">19</span></div>
+                <div class="cal-cell"><span class="cal-date">20</span></div>
+                <div class="cal-cell">
+                    <span class="cal-date">21</span>
+                    <div class="cal-event event-purple">1pm: Charity Bee</div>
+                </div>
+
+                <!-- Week 4+ -->
+                <div class="cal-cell"><span class="cal-date">22</span></div>
+                <div class="cal-cell"><span class="cal-date">23</span></div>
+                <div class="cal-cell"><span class="cal-date">24</span></div>
+                <div class="cal-cell"><span class="cal-date">25</span></div>
+                <div class="cal-cell"><span class="cal-date">26</span></div>
+                <div class="cal-cell"><span class="cal-date">27</span></div>
+                <div class="cal-cell"><span class="cal-date">28</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events List -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="stitched-text mb-40">Upcoming Highlights</h2>
+            <div class="events-list">
+                <div class="event-item card fabric-texture mb-20 reveal">
+                    <div class="event-date-side">
+                        <span class="month">FEB</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-info-side">
+                        <h3>Foundation Paper Piecing Workshop</h3>
+                        <p class="text-muted"><i class="fas fa-clock"></i> 10:00 AM - 3:00 PM &bull; <i
+                                class="fas fa-map-marker-alt"></i> Guild Studio</p>
+                        <p class="mt-10">Learn the precision of paper piecing with instructor Linda Davis. All materials
+                            included.</p>
+                    </div>
+                    <div class="event-action-side">
+                        <a href="workshops.html" class="btn btn-primary">Register Now</a>
+                    </div>
+                </div>
+                <!-- More items... -->
+                <div class="event-item card fabric-texture mb-20 reveal">
+                    <div class="event-date-side">
+                        <span class="month">FEB</span>
+                        <span class="day">21</span>
+                    </div>
+                    <div class="event-info-side">
+                        <h3>Monthly Charity Quilting Bee</h3>
+                        <p class="text-muted"><i class="fas fa-clock"></i> 1:00 PM - 4:00 PM &bull; <i
+                                class="fas fa-map-marker-alt"></i> Room B</p>
+                        <p class="mt-10">Help us assemble quilts for the local Children's Hospital. Fabric provided!</p>
+                    </div>
+                    <div class="event-action-side">
+                        <button class="btn btn-secondary">RSVP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- ... same as others ... -->
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-quilt"></i>
+                        <span>Our Guild</span>
+                    </div>
+                    <p>Fostering creativity and community through the art of quilting since 1985.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quilting Guild. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <style>
+        .mx-20 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .events-list .event-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .event-date-side {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .event-date-side .month {
+            display: block;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .event-date-side .day {
+            display: block;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .event-info-side {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .calendar-grid-mock {
+                display: none;
+            }
+        }
+    </style>
+</body>
+
+</html>

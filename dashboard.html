@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard - Quilting Guild</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar Navigation -->
+    <aside class="db-sidebar">
+        <div class="sidebar-top">
+            <div class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </div>
+            <div class="member-mini-profile mt-20">
+                <div class="avatar-sm quilted-border">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="Profile">
+                </div>
+                <div class="ml-10">
+                    <h4>Barbara J.</h4>
+                    <p class="status">Active - Individual</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav mt-40">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                <li><a href="#"><i class="fas fa-calendar-check"></i> Events & RSVPs</a></li>
+                <li><a href="#"><i class="fas fa-images"></i> My Quilts</a></li>
+                <li><a href="show-entry-form.html"><i class="fas fa-file-signature"></i> Submit Show Entry</a></li>
+                <li><a href="member-directory.html"><i class="fas fa-users"></i> Member Directory</a></li>
+                <li><a href="resources.html"><i class="fas fa-book-reader"></i> Library Catalog</a></li>
+                <li><a href="#"><i class="fas fa-credit-card"></i> Billing</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="countdown-card card p-15">
+                <p><small>Next Meeting in:</small></p>
+                <div class="countdown">10d 04h 22m</div>
+            </div>
+            <a href="index.html" class="logout-btn mt-20"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="db-main">
+        <!-- Top Bar -->
+        <header class="db-topbar">
+            <div class="search-main" style="flex: 0 0 400px; background: var(--bg-secondary);">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search events, members, resources..." class="form-input"
+                    style="border: none; background: transparent;">
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="topbar-right">
+                <button class="icon-btn" title="Notifications"><i class="fas fa-bell"></i><span
+                        class="dot"></span></button>
+                <button class="icon-btn" title="Messages"><i class="fas fa-comment"></i></button>
+                <button class="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <div class="user-dropdown">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Widgets -->
+        <div class="db-content">
+            <div class="welcome-banner card fabric-texture reveal">
+                <div class="welcome-text">
+                    <h1 class="stitched-text">Welcome back, Barbara!</h1>
+                    <p>Your membership is active until <strong>Dec 31, 2026</strong>. You have 2 free show entries
+                        remaining.</p>
+                </div>
+                <div class="welcome-cta">
+                    <a href="show-entry-form.html" class="btn btn-primary btn-fabric">Submit a Quilt</a>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-grid-4 mt-30">
+                <div class="stat-card card reveal">
+                    <div class="stat-icon bg-accent-1"><i class="fas fa-calendar"></i></div>
+                    <div class="stat-data">
+                        <h3>12</h3>
+                        <p>Events Attended</p>
+                    </div>
+                </div>
+                <div class="stat-card card reveal">
+                    <div class="stat-icon bg-accent-2"><i class="fas fa-award"></i></div>
+                    <div class="stat-data">
+                        <h3>2</h3>
+                        <p>Ribbons Won</p>
+                    </div>
+                </div>
+                <div class="stat-card card reveal">
+                    <div class="stat-icon bg-accent-3"><i class="fas fa-book"></i></div>
+                    <div class="stat-data">
+                        <h3>3</h3>
+                        <p>Books Checked Out</p>
+                    </div>
+                </div>
+                <div class="stat-card card reveal">
+                    <div class="stat-icon bg-accent-4"><i class="fas fa-clock"></i></div>
+                    <div class="stat-data">
+                        <h3>102</h3>
+                        <p>Volunteer Hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="db-main-grid mt-30">
+                <!-- Upcoming Schedule -->
+                <div class="grid-col-8 card reveal">
+                    <div class="flex-between mb-20">
+                        <h3 class="stitched-text">My Schedule</h3>
+                        <a href="events-calendar.html" class="text-link">Full Calendar</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="db-table">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monthly Meeting</strong></td>
+                                    <td>Feb 4, 7:00pm</td>
+                                    <td><span class="badge badge-success">Attending</span></td>
+                                    <td><button class="btn btn-secondary btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Paper Piecing Workshop</strong></td>
+                                    <td>Feb 15, 10:00am</td>
+                                    <td><span class="badge badge-success">Registered</span></td>
+                                    <td><button class="btn btn-secondary btn-sm">Info</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quilt Show Deadline</strong></td>
+                                    <td>March 30</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                    <td><a href="show-entry-form.html" class="btn btn-primary btn-sm">Submit</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- My Recent Quilts -->
+                <div class="grid-col-4 card reveal">
+                    <div class="flex-between mb-20">
+                        <h3 class="stitched-text">My Library</h3>
+                        <a href="#" class="text-link">View All</a>
+                    </div>
+                    <div class="recent-quilts">
+                        <div class="mini-quilt-item">
+                            <img src="https://images.unsplash.com/photo-1604521376281-17f697b68d76?w=100" alt="Quilt">
+                            <div>
+                                <p><strong>Ocean Waves</strong></p>
+                                <p><small>Added: Jan 15</small></p>
+                            </div>
+                        </div>
+                        <div class="mini-quilt-item mt-10">
+                            <img src="https://images.unsplash.com/photo-1590736910113-f661cc296996?w=100" alt="Quilt">
+                            <div>
+                                <p><strong>Starry Night</strong></p>
+                                <p><small>Added: Dec 20</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary w-full mt-20">Add New Project</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/animations.js"></script>
+    <style>
+        .dashboard-body {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+        }
+
+        .db-sidebar {
+            width: 280px;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .db-main {
+            flex: 1;
+            margin-left: 280px;
+        }
+
+        .sidebar-top {
+            flex-shrink: 0;
+        }
+
+        .member-mini-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar-sm {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .avatar-sm img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status {
+            font-size: 0.75rem;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .sidebar-nav ul li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-nav ul li a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: 0.3s;
+        }
+
+        .sidebar-nav ul li a i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-nav ul li.active a,
+        .sidebar-nav ul li a:hover {
+            background: rgba(233, 30, 99, 0.1);
+            color: var(--color-primary);
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+        }
+
+        .countdown-card {
+            background: var(--bg-secondary);
+            border: none;
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logout-btn {
+            display: block;
+            color: var(--color-error);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .db-topbar {
+            height: 80px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--color-error);
+            border-radius: 50%;
+        }
+
+        .user-dropdown img {
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .db-content {
+            padding: 40px;
+        }
+
+        .welcome-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: var(--color-accent-4);
+            color: white;
+            border-radius: 20px;
+        }
+
+        .welcome-banner .stitched-text {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .db-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .stat-data h3 {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .stat-data p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .db-main-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .grid-col-8 {
+            grid-column: span 8;
+        }
+
+        .grid-col-4 {
+            grid-column: span 4;
+        }
+
+        .db-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .db-table th,
+        .db-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .db-table th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .mini-quilt-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .mini-quilt-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1200px) {
+            .db-grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .db-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-col-8,
+            .grid-col-4 {
+                grid-column: span 12;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .db-sidebar {
+                width: 80px;
+                padding: 20px 10px;
+            }
+
+            .db-sidebar span,
+            .db-sidebar .member-mini-profile div,
+            .db-sidebar .countdown-card {
+                display: none;
+            }
+
+            .db-main {
+                margin-left: 80px;
+            }
+
+            .sidebar-nav ul li a {
+                padding: 15px;
+                justify-content: center;
+            }
+
+            .sidebar-nav ul li a i {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Lost - 404 - Quilting Guild</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-pattern">
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="error-container">
+        <div class="error-card card fabric-texture quilted-border reveal">
+            <div class="error-illustration">
+                <i class="fas fa-thread fa-10x color-muted"></i>
+                <i class="fas fa-needle fa-4x color-primary needle-anim"></i>
+            </div>
+            <h1 class="stitched-text mt-40" style="font-size: 5rem;">404</h1>
+            <h2>Oops! We lost the thread.</h2>
+            <p class="mt-20">It seems you've wandered off the pattern. Let's stitch you back on track.</p>
+
+            <form class="newsletter-form mt-40">
+                <input type="text" placeholder="Find what you're looking for..." class="form-input">
+                <button type="submit" class="btn btn-primary btn-fabric">Search</button>
+            </form>
+
+            <div class="quick-links mt-40">
+                <p><strong>Maybe try these patches:</strong></p>
+                <div class="patchwork-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 20px;">
+                    <a href="index.html" class="patch card"
+                        style="background-color: var(--color-accent-1); padding: 20px;">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="about.html" class="patch card"
+                        style="background-color: var(--color-accent-2); padding: 20px;">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="error-tip mt-40">
+                <p><em>"Quilting tip: Always measure twice, cut once!"</em></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/animations.js"></script>
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .error-card {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .error-illustration {
+            position: relative;
+            display: inline-block;
+        }
+
+        .color-muted {
+            color: var(--border-color);
+        }
+
+        .needle-anim {
+            position: absolute;
+            top: 20%;
+            right: -20px;
+            animation: thread-bob 2s ease-in-out infinite;
+        }
+
+        @keyframes thread-bob {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(15deg);
+            }
+        }
+
+        .bg-pattern {
+            background-image:
+                radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</body>
+
+</html>

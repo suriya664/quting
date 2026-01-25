@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quilting Guild - Where Quilters Come Together</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Member
+                    Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-patchwork reveal">
+        <div class="hero-bg-animated" id="hero-quilt">
+            <!-- Animated quilt blocks will be injected here or styled via CSS -->
+        </div>
+        <div class="container hero-content">
+            <h1 class="stitched-text">Where Quilters <br>Come Together</h1>
+            <p>Join our community of 300+ quilters. Monthly meetings, workshops, and annual quilt show.</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn btn-primary btn-fabric">Become a Member</a>
+                <a href="resources.html" class="btn btn-secondary">View Member Quilts</a>
+            </div>
+            <div class="trust-badges">
+                <span>Est. 1985</span> &bull;
+                <span>300+ Members</span> &bull;
+                <span>Annual Award-Winning Show</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Carousel -->
+    <section class="section-padding bg-light">
+        <div class="container text-center">
+            <h2 class="stitched-text mb-40">Upcoming Guild Events</h2>
+            <div class="events-carousel">
+                <div class="event-card-quilt">
+                    <div class="quilt-block-anim">
+                        <div class="event-inner card fabric-texture">
+                            <span class="event-date">Feb 10</span>
+                            <h3>Monthly Meeting</h3>
+                            <p>Topic: "Appliqué Techniques"</p>
+                            <p><small>Guest Speaker: Maria Thompson</small></p>
+                            <a href="events-calendar.html" class="btn btn-primary mt-20">RSVP Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- More blocks added for carousel effect -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Directory Preview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header flex-between mb-40">
+                <h2 class="stitched-text">Meet Our Members</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="Find a member..." class="form-input">
+                </div>
+            </div>
+            <div class="member-grid grid-6">
+                <!-- 6 Featured Profiles -->
+                <div class="member-card card fabric-texture">
+                    <div class="member-avatar quilted-border">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Sarah J.">
+                    </div>
+                    <h4>Sarah Johnson</h4>
+                    <p class="specialty">Modern Quilting</p>
+                    <p class="years">15 Years Quilting</p>
+                    <a href="member-directory.html" class="text-link">View Profile</a>
+                </div>
+                <!-- Repeat 5 more times with different data -->
+                <div class="member-card card fabric-texture">
+                    <div class="member-avatar quilted-border">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Linda D.">
+                    </div>
+                    <h4>Linda Davis</h4>
+                    <p class="specialty">Traditional Patchwork</p>
+                    <p class="years">30 Years Quilting</p>
+                    <a href="member-directory.html" class="text-link">View Profile</a>
+                </div>
+                <div class="member-card card fabric-texture">
+                    <div class="member-avatar quilted-border">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="David C.">
+                    </div>
+                    <h4>David Chen</h4>
+                    <p class="specialty">Art Quilts</p>
+                    <p class="years">8 Years Quilting</p>
+                    <a href="member-directory.html" class="text-link">View Profile</a>
+                </div>
+            </div>
+            <div class="text-center mt-40">
+                <a href="member-directory.html" class="btn btn-secondary">Browse Full Directory</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guild Benefits -->
+    <section class="section-padding bg-pattern">
+        <div class="container text-center">
+            <h2 class="stitched-text mb-40">Guild Benefits</h2>
+            <div class="patchwork-grid">
+                <div class="patch fabric-texture" style="background-color: var(--color-accent-1);">
+                    <i class="fas fa-book-open"></i>
+                    <h4>Library Access</h4>
+                    <p>1,000+ pattern books</p>
+                </div>
+                <div class="patch fabric-texture" style="background-color: var(--color-accent-2);">
+                    <i class="fas fa-cut"></i>
+                    <h4>Workshops</h4>
+                    <p>Monthly hands-on</p>
+                </div>
+                <div class="patch fabric-texture" style="background-color: var(--color-accent-3);">
+                    <i class="fas fa-trophy"></i>
+                    <h4>Annual Show</h4>
+                    <p>Exhibit & compete</p>
+                </div>
+                <div class="patch fabric-texture" style="background-color: var(--color-accent-4);">
+                    <i class="fas fa-user-friends"></i>
+                    <h4>Mentorship</h4>
+                    <p>Pairing with experts</p>
+                </div>
+                <div class="patch fabric-texture" style="background-color: var(--color-primary);">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h4>Shop Discounts</h4>
+                    <p>20% off local stores</p>
+                </div>
+                <div class="patch fabric-texture" style="background-color: var(--color-secondary);">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h4>Newsletter</h4>
+                    <p>Patterns & tips</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <div class="quilted-border card py-40">
+                <h3 class="stitched-text">Stitch with Us!</h3>
+                <p>Get monthly patterns & guild news delivered to your inbox.</p>
+                <form class="newsletter-form mt-20">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary btn-fabric">
+                        <i class="fas fa-paper-plane mr-5"></i> Subscribe
+                    </button>
+                </form>
+                <p class="mt-10"><small>Join 800+ subscribers.</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-quilt"></i>
+                        <span>Our Guild</span>
+                    </div>
+                    <p>Fostering creativity and community through the art of quilting since 1985.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="events-calendar.html">Events</a></li>
+                        <li><a href="show-entry-form.html">Show Entry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Library</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Member Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quilting Guild. All rights reserved. Hand-stitched with love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

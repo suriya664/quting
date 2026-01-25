@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quilting Guild - Fabric Haven</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-v2.html" class="active">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="events-calendar.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Member
+                    Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Split Hero -->
+    <section class="split-hero">
+        <div class="hero-left">
+            <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=1200"
+                alt="Members Quilting Together">
+        </div>
+        <div class="hero-right fabric-texture">
+            <div class="hero-form-card card">
+                <h2 class="stitched-text">Join Our Family</h2>
+                <p>Ready to start your quilting journey? Request more information today.</p>
+                <form class="quick-join-form mt-20">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group mt-10">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group mt-10">
+                        <select>
+                            <option value="">Quilting Experience</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-fabric w-full mt-20">Request Membership
+                        Info</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Statistics -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="honeycomb-grid reveal">
+                <div class="stat-hex fabric-texture">
+                    <span class="stat-number" data-target="300">0</span>
+                    <span class="stat-label">Active Members</span>
+                </div>
+                <div class="stat-hex fabric-texture">
+                    <span class="stat-number" data-target="40">0</span>
+                    <span class="stat-label">Years Community</span>
+                </div>
+                <div class="stat-hex fabric-texture">
+                    <span class="stat-number" data-target="2400">0</span>
+                    <span class="stat-label">Quilts Annually</span>
+                </div>
+                <div class="stat-hex fabric-texture">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-label">Satisfaction %</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Quilt of the Month -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="featured-quilt-row reveal">
+                <div class="quilt-image-col">
+                    <div class="quilt-frame quilted-border">
+                        <img src="https://images.unsplash.com/photo-1604521376281-17f697b68d76?w=800"
+                            alt="Garden Party Quilt">
+                    </div>
+                </div>
+                <div class="quilt-details-col">
+                    <h5 class="color-primary">Featured Quilt of the Month</h5>
+                    <h2 class="stitched-text">Garden Party</h2>
+                    <div class="quilt-meta mt-20">
+                        <div class="meta-item"><strong>Quilter:</strong> Barbara Johnson</div>
+                        <div class="meta-item"><strong>Technique:</strong> Appliqué + Hand Quilting</div>
+                        <div class="meta-item"><strong>Size:</strong> 80" x 90"</div>
+                        <div class="meta-item"><strong>Time:</strong> 120 Hours</div>
+                    </div>
+                    <p class="mt-20">This stunning piece was inspired by a spring garden in full bloom. It features over
+                        150 unique fabric patterns and intricate hand-quilted details.</p>
+                    <a href="resources.html" class="text-link mt-20 inline-block">View Full Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Previews -->
+    <section class="section-padding bg-pattern">
+        <div class="container">
+            <div class="flex-between mb-40">
+                <h2 class="stitched-text">Upcoming Workshops</h2>
+                <a href="workshops.html" class="btn btn-secondary">View All</a>
+            </div>
+            <div class="workshop-scroll">
+                <!-- Card 1 -->
+                <div class="workshop-card card fabric-texture">
+                    <img src="https://images.unsplash.com/photo-1590736910113-f661cc296996?w=400" alt="Paper Piecing">
+                    <div class="ws-content">
+                        <h3>Foundation Paper Piecing</h3>
+                        <p class="ws-meta">March 2 &bull; Linda Davis</p>
+                        <p class="ws-price">$35 (Includes Materials)</p>
+                        <span class="badge badge-success">Beginner Friendly</span>
+                        <a href="workshops.html" class="btn btn-primary mt-20 w-full">Register</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="workshop-card card fabric-texture">
+                    <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=400" alt="Long-arm">
+                    <div class="ws-content">
+                        <h3>Long-arm Quilting</h3>
+                        <p class="ws-meta">March 16 &bull; Sam Wilson</p>
+                        <p class="ws-price">$40 (Machine Rental Included)</p>
+                        <span class="badge badge-warning">Intermediate</span>
+                        <a href="workshops.html" class="btn btn-primary mt-20 w-full">Register</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="workshop-card card fabric-texture">
+                    <img src="https://images.unsplash.com/photo-1604521376281-17f697b68d76?w=400" alt="Color Theory">
+                    <div class="ws-content">
+                        <h3>Color Theory for Quilters</h3>
+                        <p class="ws-meta">April 6 &bull; Jules Verne</p>
+                        <p class="ws-price">$30</p>
+                        <span class="badge badge-success">All Levels</span>
+                        <a href="workshops.html" class="btn btn-primary mt-20 w-full">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-quilt"></i>
+                        <span>Our Guild</span>
+                    </div>
+                    <p>Fostering creativity and community through the art of quilting since 1985.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="events-calendar.html">Events</a></li>
+                        <li><a href="show-entry-form.html">Show Entry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Library</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Member Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quilting Guild. All rights reserved. Hand-stitched with love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // Number counting animation for honeycomb
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.stat-number');
+            numbers.forEach(num => {
+                const target = +num.getAttribute('data-target');
+                const count = +num.innerText;
+                const speed = 200;
+                const inc = target / speed;
+
+                if (count < target) {
+                    num.innerText = Math.ceil(count + inc);
+                    setTimeout(animateNumbers, 1);
+                } else {
+                    num.innerText = target;
+                    if (num.getAttribute('data-target') === '98') num.innerText += '%';
+                    if (num.getAttribute('data-target') === '300') num.innerText += '+';
+                }
+            });
+        }
+
+        // Trigger on reveal
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) animateNumbers();
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.honeycomb-grid'));
+    </script>
+</body>
+
+</html>
