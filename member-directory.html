@@ -25,16 +25,16 @@
                     <li><a href="index-v2.html">Home 2</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="membership.html">Membership</a></li>
-                    <li><a href="events-calendar.html">Events</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="resources.html">Resources</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
-                <button class="rtl-toggle" title="Toggle RTL Mode">
-                    <i class="fas fa-align-left"></i>
+                <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 <button class="theme-toggle" title="Toggle Light/Dark Mode">
                     <i class="fas fa-moon"></i>
@@ -44,6 +44,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <!-- Page Hero -->
     <section class="page-hero reveal">

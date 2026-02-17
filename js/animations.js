@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initRTL();
     initFloatingFabrics();
     initScrollReveal();
+    initMobileMenu();
 });
 
 /* Theme Management */
@@ -131,6 +132,131 @@ function animatePatches(grid) {
 }
 
 /* Utility: Mobile Menu */
+function initMobileMenu() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const nav = document.querySelector('#main-nav');
+    const overlay = document.getElementById('nav-overlay');
+    
+    if (!hamburger || !nav || !overlay) return;
+    
+    // Add mobile theme controls to navigation
+    addMobileThemeControls(nav);
+    
+    hamburger.addEventListener('click', () => {
+        const isOpen = nav.classList.contains('active');
+        
+        if (isOpen) {
+            // Close menu
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            // Open menu
+            nav.classList.add('active');
+            overlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+    
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', () => {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+function addMobileThemeControls(nav) {
+    // Check if mobile controls already exist
+    if (nav.querySelector('.mobile-theme-controls')) return;
+    
+    // Create mobile theme controls container
+    const mobileControls = document.createElement('div');
+    mobileControls.className = 'mobile-theme-controls';
+    
+    // Create theme toggle button
+    const themeToggle = document.createElement('button');
+    themeToggle.className = 'theme-toggle';
+    themeToggle.setAttribute('aria-label', 'Toggle theme');
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i> Theme';
+    
+    // Create RTL toggle button
+    const rtlToggle = document.createElement('button');
+    rtlToggle.className = 'rtl-toggle';
+    rtlToggle.setAttribute('aria-label', 'Toggle RTL');
+    rtlToggle.innerHTML = '<i class="fas fa-align-left"></i> RTL';
+    
+    // Add event listeners
+    themeToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleTheme();
+    });
+    
+    rtlToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleRTL();
+    });
+    
+    // Append buttons to container
+    mobileControls.appendChild(themeToggle);
+    mobileControls.appendChild(rtlToggle);
+    
+    // Append container to navigation
+    nav.appendChild(mobileControls);
+    
+    // Update initial states
+    updateMobileThemeControls();
+}
+
+function updateMobileThemeControls() {
+    const mobileThemeToggle = document.querySelector('.mobile-theme-controls .theme-toggle i');
+    const mobileRtlToggle = document.querySelector('.mobile-theme-controls .rtl-toggle i');
+    
+    if (mobileThemeToggle) {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        mobileThemeToggle.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+    
+    if (mobileRtlToggle) {
+        const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+        mobileRtlToggle.className = isRTL ? 'fas fa-align-right' : 'fas fa-align-left';
+    }
+}
+
+function toggleTheme() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    updateMobileThemeControls();
+}
+
+function toggleRTL() {
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    const newDir = isRTL ? 'ltr' : 'rtl';
+    
+    document.documentElement.setAttribute('dir', newDir);
+    localStorage.setItem('rtl', newDir === 'rtl');
+    updateRTLIcon(newDir === 'rtl');
+    updateMobileThemeControls();
+}
+
 function toggleMobileMenu() {
     const nav = document.querySelector('nav');
     if (nav) nav.classList.toggle('mobile-active');

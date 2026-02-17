@@ -25,16 +25,16 @@
                     <li><a href="index-v2.html">Home 2</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="membership.html">Membership</a></li>
-                    <li><a href="events-calendar.html">Events</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="resources.html">Resources</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
-                <button class="rtl-toggle" title="Toggle RTL Mode">
-                    <i class="fas fa-align-left"></i>
+                <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 <button class="theme-toggle" title="Toggle Light/Dark Mode">
                     <i class="fas fa-moon"></i>
@@ -44,6 +44,9 @@
             </div>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero-patchwork reveal">
@@ -55,7 +58,7 @@
             <p>Join our community of 300+ quilters. Monthly meetings, workshops, and annual quilt show.</p>
             <div class="cta-buttons">
                 <a href="membership.html" class="btn btn-primary btn-fabric">Become a Member</a>
-                <a href="resources.html" class="btn btn-secondary">View Member Quilts</a>
+                <a href="member-directory.html" class="btn btn-secondary">View Member Quilts</a>
             </div>
             <div class="trust-badges">
                 <span>Est. 1985</span> &bull;
@@ -81,7 +84,39 @@
                         </div>
                     </div>
                 </div>
-                <!-- More blocks added for carousel effect -->
+                <div class="event-card-quilt">
+                    <div class="quilt-block-anim">
+                        <div class="event-inner card fabric-texture">
+                            <span class="event-date">Feb 18</span>
+                            <h3>Workshop: Hand Quilting</h3>
+                            <p>Learn traditional hand quilting stitches</p>
+                            <p><small>Instructor: Sarah Johnson</small></p>
+                            <a href="workshops.html" class="btn btn-primary mt-20">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card-quilt">
+                    <div class="quilt-block-anim">
+                        <div class="event-inner card fabric-texture">
+                            <span class="event-date">Mar 3</span>
+                            <h3>Charity Sewing Bee</h3>
+                            <p>Community quilts for local hospital</p>
+                            <p><small>All materials provided</small></p>
+                            <a href="contact.html" class="btn btn-primary mt-20">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card-quilt">
+                    <div class="quilt-block-anim">
+                        <div class="event-inner card fabric-texture">
+                            <span class="event-date">Mar 15</span>
+                            <h3>Annual Show Entry</h3>
+                            <p>Last day to submit quilt entries</p>
+                            <p><small>Categories: Traditional, Modern, Art</small></p>
+                            <a href="show-entry-form.html" class="btn btn-primary mt-20">Enter Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -98,8 +133,9 @@
             <div class="member-grid grid-6">
                 <!-- 6 Featured Profiles -->
                 <div class="member-card card fabric-texture">
-                    <div class="member-avatar quilted-border">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Sarah J.">
+                    <div class="quilt-frame quilted-border">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYy5injLTA7C6EMfwdaUvykC2JvhNKU3q8A&s" 
+                            alt="Garden Party Quilt">
                     </div>
                     <h4>Sarah Johnson</h4>
                     <p class="specialty">Modern Quilting</p>
@@ -204,15 +240,14 @@
                     <ul>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="membership.html">Membership</a></li>
-                        <li><a href="events-calendar.html">Events</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
                         <li><a href="show-entry-form.html">Show Entry</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="workshops.html">Workshops</a></li>
-                        <li><a href="resources.html">Library</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="login.html">Member Portal</a></li>
                     </ul>
