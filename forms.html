@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Forms - Free Quilt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/quilt-patterns.css">
+</head>
+
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="main-sidebar-overlay" id="main-sidebar-overlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="main-mobile-sidebar" id="main-mobile-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <h2>Free Quilt</h2>
+            </div>
+            <button class="close-sidebar" id="close-sidebar" aria-label="Close Menu">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <div class="mobile-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 1rem 0;"></div>
+            <a href="members.html" class="mobile-nav-link">Member Directory</a>
+            <a href="forms.html" class="mobile-nav-link active">Entry Forms</a>
+            <a href="dashboard.html" class="mobile-nav-link">Account Dashboard</a>
+            <a href="login.html" class="mobile-nav-link">Login / Register</a>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="index.html" class="logo">
+                        <h1>Free Quilt</h1>
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="main-menu">
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Home</a>
+
+                    </div>
+                    <div class="nav-icons">
+                        <a href="members.html" class="nav-icon-btn members-btn" title="Member Directory">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </a>
+                        <a href="forms.html" class="nav-icon-btn forms-btn active" title="Entry Forms">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                            </svg>
+                        </a>
+                        <a href="dashboard.html" class="nav-icon-btn dashboard-btn" title="Dashboard">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                            </svg>
+                        </a>
+                        <div class="auth-links" id="auth-links">
+                            <a href="login.html" class="auth-btn login-btn" title="Login">
+                                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="main-mobile-toggle" id="main-mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero-section">
+                <h1>Show Entry Forms</h1>
+                <p class="hero-description">Submit your patterns or register for upcoming quilting shows.</p>
+            </section>
+
+            <section class="form-section">
+                <div class="enhanced-form-container">
+                    <div class="section-header">
+                        <h2>Annual Charity Quilt Show - Entry Form</h2>
+                        <p>Submit your quilt for the 2026 Charity Show. Deadline: August 15th.</p>
+                    </div>
+
+                    <form class="enhanced-form">
+                        <div class="form-grid">
+                            <!-- Section 1: Entrant Info -->
+                            <div class="form-section-title">Entrant Information</div>
+
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <!-- Section 2: Quilt Info -->
+                            <div class="form-section-title">Quilt Details</div>
+
+                            <div class="form-group">
+                                <label for="quilt-title">Quilt Title</label>
+                                <input type="text" id="quilt-title" name="quilt-title" placeholder="Starlight Symphony"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Quilt Category</label>
+                                <select id="category" name="category" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="traditional">Traditional Pieced</option>
+                                    <option value="modern">Modern Quilting</option>
+                                    <option value="art">Art/Innovative</option>
+                                    <option value="miniature">Miniature</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dimensions">Dimensions (Width x Length in inches)</label>
+                                <input type="text" id="dimensions" name="dimensions" placeholder="e.g. 60 x 80"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="technique">Primary Technique</label>
+                                <select id="technique" name="technique" required>
+                                    <option value="" disabled selected>Select a technique</option>
+                                    <option value="machine">Machine Piecing</option>
+                                    <option value="hand">Hand Applique</option>
+                                    <option value="paper">Foundation Paper Piecing</option>
+                                    <option value="longarm">Custom Longarm Quilting</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="designer">Pattern Designer</label>
+                                <input type="text" id="designer" name="designer"
+                                    placeholder="Artist name or 'Original Design'">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="materials">Materials Used (Fabrics, Thread, Batting)</label>
+                                <textarea id="materials" name="materials"
+                                    placeholder="List the primary materials used..."></textarea>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="story">Quilt Story / Description</label>
+                                <textarea id="story" name="story"
+                                    placeholder="Tell us the inspiration or story behind this piece..."></textarea>
+                            </div>
+
+                            <!-- Section 3: Experience -->
+                            <div class="form-section-title">Experience Level</div>
+
+                            <div class="form-group full-width">
+                                <div class="radio-group">
+                                    <label class="radio-item">
+                                        <input type="radio" name="skill-level" value="beginner"> Beginner
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="skill-level" value="intermediate" checked>
+                                        Intermediate
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="skill-level" value="advanced"> Advanced
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="skill-level" value="professional"> Professional
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem; text-align: right;">
+                            <button type="submit" class="pattern-download-btn"
+                                style="width: auto; padding-left: 3rem; padding-right: 3rem;">Submit Entry</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Other Forms Section -->
+            <section class="other-forms" style="margin-bottom: 5rem;">
+                <div class="container">
+                    <h2 style="margin-bottom: 2rem;">Other Submission Options</h2>
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <div class="pattern-content">
+                                <h3>Pattern Submission</h3>
+                                <p>Submit your original pattern to be featured on our website.</p>
+                                <a href="#" class="pattern-download-btn">Open Form</a>
+                            </div>
+                        </div>
+                        <div class="pattern-card">
+                            <div class="pattern-content">
+                                <h3>Workshop Registration</h3>
+                                <p>Sign up for upcoming advanced quilting workshops.</p>
+                                <a href="#" class="pattern-download-btn">Open Form</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-column footer-brand">
+                    <h3>Free Quilt</h3>
+                    <p>Your source for inspiring quilting projects and free patterns. Join our community of passionate
+                        crafters from around the world.</p>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-link" title="Facebook">FB</a>
+                        <a href="#" class="social-link" title="Instagram">IG</a>
+                        <a href="#" class="social-link" title="Pinterest">PN</a>
+                        <a href="#" class="social-link" title="Twitter">TW</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Column -->
+                <div class="footer-column">
+                    <h4>Quick Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="index.html#about">About Free Quilt</a></li>
+                        <li><a href="members.html">Member Directory</a></li>
+                        <li><a href="forms.html">Show Entry Forms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html#patterns">Free Patterns</a></li>
+                        <li><a href="#">Quilting Tutorials</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="dashboard.html">My Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="footer-column footer-newsletter">
+                    <h4>Join Our Newsletter</h4>
+                    <p>Receive weekly updates with new patterns and exclusive tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email address" required>
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Free Quilt. Static website.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

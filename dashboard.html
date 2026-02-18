@@ -4,454 +4,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Dashboard - Quilting Guild</title>
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dashboard - Free Quilt</title>
+    <meta name="description" content="Your personal quilting dashboard - manage patterns, track projects, and more.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
-<body class="dashboard-body">
-
-    <!-- Sidebar Navigation -->
-    <aside class="db-sidebar">
-        <div class="sidebar-top">
-            <div class="logo">
-                <i class="fas fa-quilt"></i>
-                <span>Our Guild</span>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <h1>Free Quilt</h1>
+                </a>
             </div>
-            <div class="member-mini-profile mt-20">
-                <div class="avatar-sm quilted-border">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="Profile">
-                </div>
-                <div class="ml-10">
-                    <h4>Barbara J.</h4>
-                    <p class="status">Active - Individual</p>
-                </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-link">
+                    <span class="sidebar-icon">🏠</span> Home
+                </a>
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span class="sidebar-icon">📊</span> Dashboard
+                </a>
+                <a href="members.html" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span> Members
+                </a>
+                <a href="forms.html" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span> Forms
+                </a>
+                <a href="index.html#tutorials" class="sidebar-link">
+                    <span class="sidebar-icon">📚</span> Tutorials
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-link logout-btn" id="sidebar-logout-btn">
+                    <span class="sidebar-icon">🚪</span> Logout
+                </a>
             </div>
-        </div>
+        </aside>
 
-        <nav class="sidebar-nav mt-40">
-            <ul>
-                <li class="active"><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
-                <li><a href="#"><i class="fas fa-calendar-check"></i> Events & RSVPs</a></li>
-                <li><a href="#"><i class="fas fa-images"></i> My Quilts</a></li>
-                <li><a href="show-entry-form.html"><i class="fas fa-file-signature"></i> Submit Show Entry</a></li>
-                <li><a href="member-directory.html"><i class="fas fa-users"></i> Member Directory</a></li>
-                <li><a href="workshops.html"><i class="fas fa-book-reader"></i> Workshops</a></li>
-                <li><a href="#"><i class="fas fa-credit-card"></i> Billing</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-            </ul>
-        </nav>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-        <div class="sidebar-bottom">
-            <div class="countdown-card card p-15">
-                <p><small>Next Meeting in:</small></p>
-                <div class="countdown">10d 04h 22m</div>
-            </div>
-            <a href="index.html" class="logout-btn mt-20"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-    </aside>
-
-    <!-- Main Content Area -->
-    <main class="db-main">
-
-
-        <!-- Dashboard Widgets -->
-        <div class="db-content">
-            <div class="welcome-banner card fabric-texture reveal">
-                <div class="welcome-text">
-                    <h1 class="stitched-text">Welcome back, Barbara!</h1>
-                    <p>Your membership is active until <strong>Dec 31, 2026</strong>. You have 2 free show entries
-                        remaining.</p>
-                </div>
-                <div class="welcome-cta">
-                    <a href="show-entry-form.html" class="btn btn-primary btn-fabric">Submit a Quilt</a>
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-main-content">
+            <!-- Mobile Top Nav -->
+            <div class="mobile-top-bar">
+                <button class="menu-toggle" id="sidebar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-logo">
+                    <h1>Free Quilt</h1>
                 </div>
             </div>
 
-            <!-- Stats Row -->
-            <div class="db-grid-4 mt-30">
-                <div class="stat-card card reveal">
-                    <div class="stat-icon bg-accent-1"><i class="fas fa-calendar"></i></div>
-                    <div class="stat-data">
-                        <h3>12</h3>
-                        <p>Events Attended</p>
-                    </div>
-                </div>
-                <div class="stat-card card reveal">
-                    <div class="stat-icon bg-accent-2"><i class="fas fa-award"></i></div>
-                    <div class="stat-data">
-                        <h3>2</h3>
-                        <p>Ribbons Won</p>
-                    </div>
-                </div>
-                <div class="stat-card card reveal">
-                    <div class="stat-icon bg-accent-3"><i class="fas fa-book"></i></div>
-                    <div class="stat-data">
-                        <h3>3</h3>
-                        <p>Books Checked Out</p>
-                    </div>
-                </div>
-                <div class="stat-card card reveal">
-                    <div class="stat-icon bg-accent-4"><i class="fas fa-clock"></i></div>
-                    <div class="stat-data">
-                        <h3>102</h3>
-                        <p>Volunteer Hours</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-main-grid mt-30">
-                <!-- Upcoming Schedule -->
-                <div class="grid-col-8 card reveal">
-                    <div class="flex-between mb-20">
-                        <h3 class="stitched-text">My Schedule</h3>
-                        <a href="workshops.html" class="text-link">Workshop Schedule</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="db-table">
-                            <thead>
-                                <tr>
-                                    <th>Event</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Monthly Meeting</strong></td>
-                                    <td>Feb 4, 7:00pm</td>
-                                    <td><span class="badge badge-success">Attending</span></td>
-                                    <td><button class="btn btn-secondary btn-sm">Edit</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Paper Piecing Workshop</strong></td>
-                                    <td>Feb 15, 10:00am</td>
-                                    <td><span class="badge badge-success">Registered</span></td>
-                                    <td><button class="btn btn-secondary btn-sm">Info</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Quilt Show Deadline</strong></td>
-                                    <td>March 30</td>
-                                    <td><span class="badge badge-warning">Pending</span></td>
-                                    <td><a href="show-entry-form.html" class="btn btn-primary btn-sm">Submit</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- My Recent Quilts -->
-                <div class="grid-col-4 card reveal">
-                    <div class="flex-between mb-20">
-                        <h3 class="stitched-text">My Library</h3>
-                        <a href="#" class="text-link">View All</a>
-                    </div>
-                    <div class="recent-quilts">
-                        <div class="mini-quilt-item">
-                            <img src="https://images.unsplash.com/photo-1604521376281-17f697b68d76?w=100" alt="Quilt">
-                            <div>
-                                <p><strong>Ocean Waves</strong></p>
-                                <p><small>Added: Jan 15</small></p>
+            <!-- Main Dashboard Content -->
+            <main class="dashboard-main">
+                <div class="container">
+                    <!-- Dashboard Header -->
+                    <section class="dashboard-hero">
+                        <div class="welcome-content">
+                            <h1>Welcome back, <span id="welcome-name">John</span>! 👋</h1>
+                            <p>Ready to continue your quilting journey? Here's what's happening with your projects.</p>
+                        </div>
+                        <div class="quick-stats">
+                            <div class="stat-card">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Patterns Downloaded</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Active Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Favorites</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">24</div>
+                                <div class="stat-label">Days Streak</div>
                             </div>
                         </div>
-                        <div class="mini-quilt-item mt-10">
-                            <img src="https://images.unsplash.com/photo-1590736910113-f661cc296996?w=100" alt="Quilt">
-                            <div>
-                                <p><strong>Starry Night</strong></p>
-                                <p><small>Added: Dec 20</small></p>
+                    </section>
+
+                    <!-- Dashboard Content Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Recent Activity -->
+                        <section class="dashboard-section recent-activity">
+                            <div class="section-header">
+                                <h2>Recent Activity</h2>
+                                <a href="#" class="view-all">View All</a>
                             </div>
-                        </div>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">📥</div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Downloaded "Dresden Delight Quilt"</div>
+                                        <div class="activity-time">2 hours ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">⭐</div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Added "Tetris Tumble Quilt" to favorites</div>
+                                        <div class="activity-time">1 day ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">📝</div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Updated notes for "Mini Charmer Table Runner"</div>
+                                        <div class="activity-time">3 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">🎯</div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Completed "Flying Geese Frenzy Quilt"</div>
+                                        <div class="activity-time">1 week ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Current Projects -->
+                        <section class="dashboard-section current-projects">
+                            <div class="section-header">
+                                <h2>Current Projects</h2>
+                                <a href="#" class="add-project">+ Add Project</a>
+                            </div>
+                            <div class="projects-grid">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                            alt="Dresden Delight Quilt">
+                                        <div class="project-progress">75%</div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Dresden Delight Quilt</h3>
+                                        <p>Started: Jan 15, 2026</p>
+                                        <div class="project-status">
+                                            <span class="status-badge in-progress">In Progress</span>
+                                            <span class="project-due">Due: Feb 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150434/Mini-Charmer-Table-Runner-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                            alt="Mini Charmer Table Runner">
+                                        <div class="project-progress">30%</div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Mini Charmer Table Runner</h3>
+                                        <p>Started: Jan 20, 2026</p>
+                                        <div class="project-status">
+                                            <span class="status-badge in-progress">In Progress</span>
+                                            <span class="project-due">Due: Feb 5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                            alt="Tetris Tumble Quilt">
+                                        <div class="project-progress">10%</div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Tetris Tumble Quilt</h3>
+                                        <p>Started: Jan 22, 2026</p>
+                                        <div class="project-status">
+                                            <span class="status-badge planning">Planning</span>
+                                            <span class="project-due">Due: Feb 15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Favorite Patterns -->
+                        <section class="dashboard-section favorite-patterns">
+                            <div class="section-header">
+                                <h2>Favorite Patterns</h2>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div class="favorites-grid">
+                                <div class="favorite-item">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Tetris Tumble Quilt">
+                                    <div class="favorite-info">
+                                        <h4>Tetris Tumble Quilt</h4>
+                                        <span class="difficulty intermediate">Intermediate</span>
+                                    </div>
+                                    <button class="favorite-btn active">⭐</button>
+                                </div>
+                                <div class="favorite-item">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Dresden Delight Quilt">
+                                    <div class="favorite-info">
+                                        <h4>Dresden Delight Quilt</h4>
+                                        <span class="difficulty intermediate">Intermediate</span>
+                                    </div>
+                                    <button class="favorite-btn active">⭐</button>
+                                </div>
+                                <div class="favorite-item">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150439/Modern-Angle-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Modern Angle Quilt">
+                                    <div class="favorite-info">
+                                        <h4>Modern Angle Quilt</h4>
+                                        <span class="difficulty advanced">Advanced</span>
+                                    </div>
+                                    <button class="favorite-btn active">⭐</button>
+                                </div>
+                                <div class="favorite-item">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150358/Jelly-Roll-Jumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Jelly Roll Jumble Quilt">
+                                    <div class="favorite-info">
+                                        <h4>Jelly Roll Jumble Quilt</h4>
+                                        <span class="difficulty beginner">Beginner</span>
+                                    </div>
+                                    <button class="favorite-btn active">⭐</button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Quick Actions -->
+                        <section class="dashboard-section quick-actions">
+                            <div class="section-header">
+                                <h2>Quick Actions</h2>
+                            </div>
+                            <div class="actions-grid">
+                                <a href="index.html#patterns" class="action-card">
+                                    <div class="action-icon">🔍</div>
+                                    <h3>Browse Patterns</h3>
+                                    <p>Discover new quilt patterns</p>
+                                </a>
+                                <a href="#tutorials" class="action-card">
+                                    <div class="action-icon">📚</div>
+                                    <h3>Watch Tutorials</h3>
+                                    <p>Learn new techniques</p>
+                                </a>
+                                <a href="#" class="action-card">
+                                    <div class="action-icon">📊</div>
+                                    <h3>Progress Report</h3>
+                                    <p>View your quilting stats</p>
+                                </a>
+                                <a href="#" class="action-card">
+                                    <div class="action-icon">👥</div>
+                                    <h3>Community</h3>
+                                    <p>Connect with other quilters</p>
+                                </a>
+                            </div>
+                        </section>
+
+                        <!-- Upcoming Events -->
+                        <section class="dashboard-section upcoming-events">
+                            <div class="section-header">
+                                <h2>Upcoming Events</h2>
+                                <a href="#" class="view-all">View Calendar</a>
+                            </div>
+                            <div class="events-list">
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="date-day">28</div>
+                                        <div class="date-month">JAN</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <h4>Virtual Quilt Along</h4>
+                                        <p>Join our monthly quilt along session</p>
+                                        <div class="event-time">2:00 PM - 4:00 PM EST</div>
+                                    </div>
+                                    <button class="event-btn">Join</button>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="date-day">05</div>
+                                        <div class="date-month">FEB</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <h4>Beginner Workshop</h4>
+                                        <p>Learn basic quilting techniques</p>
+                                        <div class="event-time">10:00 AM - 12:00 PM EST</div>
+                                    </div>
+                                    <button class="event-btn">Register</button>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="date-day">12</div>
+                                        <div class="date-month">FEB</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <h4>Pattern Release Day</h4>
+                                        <p>New exclusive patterns for members</p>
+                                        <div class="event-time">All Day</div>
+                                    </div>
+                                    <button class="event-btn">Remind Me</button>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <button class="btn btn-secondary w-full mt-20">Add New Project</button>
                 </div>
-            </div>
-        </div>
-    </main>
+            </main>
 
-    <script src="js/animations.js"></script>
-    <style>
-        .dashboard-body {
-            display: flex;
-            min-height: 100vh;
-            background-color: var(--bg-primary);
-        }
+        </div> <!-- End of .dashboard-main-content -->
+    </div> <!-- End of .dashboard-wrapper -->
 
-        .db-sidebar {
-            width: 280px;
-            background: var(--bg-card);
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            padding: 30px;
-            position: fixed;
-            height: 100vh;
-            z-index: 100;
-        }
-
-        .db-main {
-            flex: 1;
-            margin-left: 280px;
-        }
-
-        .sidebar-top {
-            flex-shrink: 0;
-        }
-
-        .member-mini-profile {
-            display: flex;
-            align-items: center;
-        }
-
-        .avatar-sm {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .avatar-sm img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .status {
-            font-size: 0.75rem;
-            color: var(--color-primary);
-            font-weight: 700;
-        }
-
-        .sidebar-nav ul li {
-            margin-bottom: 5px;
-        }
-
-        .sidebar-nav ul li a {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            transition: 0.3s;
-        }
-
-        .sidebar-nav ul li a i {
-            width: 20px;
-            text-align: center;
-        }
-
-        .sidebar-nav ul li.active a,
-        .sidebar-nav ul li a:hover {
-            background: rgba(233, 30, 99, 0.1);
-            color: var(--color-primary);
-        }
-
-        .sidebar-bottom {
-            margin-top: auto;
-        }
-
-        .countdown-card {
-            background: var(--bg-secondary);
-            border: none;
-            text-align: center;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .logout-btn {
-            display: block;
-            color: var(--color-error);
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .db-topbar {
-            height: 80px;
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            position: sticky;
-            top: 0;
-            z-index: 99;
-        }
-
-        .topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: var(--text-secondary);
-            position: relative;
-        }
-
-        .dot {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 8px;
-            height: 8px;
-            background: var(--color-error);
-            border-radius: 50%;
-        }
-
-        .user-dropdown img {
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .db-content {
-            padding: 40px;
-        }
-
-        .welcome-banner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 40px;
-            background-color: var(--color-accent-4);
-            color: white;
-            border-radius: 20px;
-        }
-
-        .welcome-banner .stitched-text {
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        .db-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .stat-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 25px;
-        }
-
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .stat-data h3 {
-            font-size: 1.8rem;
-            line-height: 1;
-        }
-
-        .stat-data p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        .db-main-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 30px;
-        }
-
-        .grid-col-8 {
-            grid-column: span 8;
-        }
-
-        .grid-col-4 {
-            grid-column: span 4;
-        }
-
-        .db-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .db-table th,
-        .db-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .db-table th {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .mini-quilt-item {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .mini-quilt-item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        @media (max-width: 1200px) {
-            .db-grid-4 {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .db-main-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-col-8,
-            .grid-col-4 {
-                grid-column: span 12;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .db-sidebar {
-                width: 80px;
-                padding: 20px 10px;
-            }
-
-            .db-sidebar span,
-            .db-sidebar .member-mini-profile div,
-            .db-sidebar .countdown-card {
-                display: none;
-            }
-
-            .db-main {
-                margin-left: 80px;
-            }
-
-            .sidebar-nav ul li a {
-                padding: 15px;
-                justify-content: center;
-            }
-
-            .sidebar-nav ul li a i {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function () {
+            Dashboard.init();
+        });
+    </script>
 </body>
 
 </html>

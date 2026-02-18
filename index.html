@@ -4,270 +4,870 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quilting Guild - Where Quilters Come Together</title>
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Free Quilt | Static Version</title>
+    <meta name="description"
+        content="Collection of Free Quilt patterns from National Quilters Circle - now available as a static website.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/quilt-patterns.css">
 </head>
 
 <body>
+    <!-- Sidebar Overlay -->
+    <div class="main-sidebar-overlay" id="main-sidebar-overlay"></div>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-quilt"></i>
-                <span>Our Guild</span>
-            </a>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="index-v2.html">Home 2</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="membership.html">Membership</a></li>
-                    <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <button class="theme-toggle" title="Toggle Light/Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="login.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Member
-                    Login</a>
+    <!-- Mobile Sidebar -->
+    <div class="main-mobile-sidebar" id="main-mobile-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <h2>Free Quilt</h2>
             </div>
+            <button class="close-sidebar" id="close-sidebar" aria-label="Close Menu">&times;</button>
         </div>
+        <div class="mobile-nav-links">
+            <a href="#patterns" class="mobile-nav-link active">Patterns</a>
+            <a href="#tutorials" class="mobile-nav-link">Tutorials</a>
+            <a href="#resources" class="mobile-nav-link">Resources</a>
+            <a href="#faq" class="mobile-nav-link">FAQ</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <div class="mobile-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 1rem 0;"></div>
+            <a href="members.html" class="mobile-nav-link">Member Directory</a>
+            <a href="forms.html" class="mobile-nav-link">Entry Forms</a>
+            <a href="dashboard.html" class="mobile-nav-link">Account Dashboard</a>
+            <a href="login.html" class="mobile-nav-link">Login / Register</a>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="index.html" class="logo">
+                        <h1>Free Quilt</h1>
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="main-menu">
+                    <div class="nav-links">
+                        <a href="#patterns" class="nav-link active">Patterns</a>
+                        <a href="#tutorials" class="nav-link">Tutorials</a>
+                        <a href="#resources" class="nav-link">Resources</a>
+                        <a href="#faq" class="nav-link">FAQ</a>
+                        <a href="#about" class="nav-link">About</a>
+                    </div>
+                    <div class="nav-icons">
+                        <a href="members.html" class="nav-icon-btn members-btn" title="Member Directory">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </a>
+                        <a href="forms.html" class="nav-icon-btn forms-btn" title="Entry Forms">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                            </svg>
+                        </a>
+                        <a href="dashboard.html" class="nav-icon-btn dashboard-btn" title="Dashboard">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                            </svg>
+                        </a>
+                        <div class="auth-links" id="auth-links">
+                            <a href="login.html" class="auth-btn login-btn" title="Login">
+                                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="user-menu" id="user-menu" style="display: none;">
+                            <div class="user-info">
+                                <div class="user-avatar">
+                                    <img src="https://picsum.photos/seed/user-avatar/32/32.jpg" alt="User Avatar">
+                                </div>
+                            </div>
+                            <div class="user-dropdown">
+                                <button class="dropdown-toggle" id="header-dropdown-toggle">
+                                    <span>▼</span>
+                                </button>
+                                <div class="dropdown-menu" id="header-dropdown-menu">
+                                    <a href="#profile" class="dropdown-item">
+                                        <svg class="dropdown-icon" width="20" height="20" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                        </svg>
+                                        Profile
+                                    </a>
+                                    <a href="#settings" class="dropdown-item">
+                                        <svg class="dropdown-icon" width="20" height="20" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92,3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                                        </svg>
+                                        Settings
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="index.html" class="dropdown-item logout-btn" id="header-logout-btn">
+                                        <svg class="dropdown-icon" width="20" height="20" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                                        </svg>
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="main-mobile-toggle" id="main-mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation -->
+
     </header>
-    
-    <!-- Mobile Navigation Overlay -->
-    <div class="nav-overlay" id="nav-overlay"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-patchwork reveal">
-        <div class="hero-bg-animated" id="hero-quilt">
-            <!-- Animated quilt blocks will be injected here or styled via CSS -->
-        </div>
-        <div class="container hero-content">
-            <h1 class="stitched-text">Where Quilters <br>Come Together</h1>
-            <p>Join our community of 300+ quilters. Monthly meetings, workshops, and annual quilt show.</p>
-            <div class="cta-buttons">
-                <a href="membership.html" class="btn btn-primary btn-fabric">Become a Member</a>
-                <a href="member-directory.html" class="btn btn-secondary">View Member Quilts</a>
-            </div>
-            <div class="trust-badges">
-                <span>Est. 1985</span> &bull;
-                <span>300+ Members</span> &bull;
-                <span>Annual Award-Winning Show</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Upcoming Events Carousel -->
-    <section class="section-padding bg-light">
-        <div class="container text-center">
-            <h2 class="stitched-text mb-40">Upcoming Guild Events</h2>
-            <div class="events-carousel">
-                <div class="event-card-quilt">
-                    <div class="quilt-block-anim">
-                        <div class="event-inner card fabric-texture">
-                            <span class="event-date">Feb 10</span>
-                            <h3>Monthly Meeting</h3>
-                            <p>Topic: "Appliqué Techniques"</p>
-                            <p><small>Guest Speaker: Maria Thompson</small></p>
-                            <a href="events-calendar.html" class="btn btn-primary mt-20">RSVP Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-quilt">
-                    <div class="quilt-block-anim">
-                        <div class="event-inner card fabric-texture">
-                            <span class="event-date">Feb 18</span>
-                            <h3>Workshop: Hand Quilting</h3>
-                            <p>Learn traditional hand quilting stitches</p>
-                            <p><small>Instructor: Sarah Johnson</small></p>
-                            <a href="workshops.html" class="btn btn-primary mt-20">Register</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-quilt">
-                    <div class="quilt-block-anim">
-                        <div class="event-inner card fabric-texture">
-                            <span class="event-date">Mar 3</span>
-                            <h3>Charity Sewing Bee</h3>
-                            <p>Community quilts for local hospital</p>
-                            <p><small>All materials provided</small></p>
-                            <a href="contact.html" class="btn btn-primary mt-20">Join Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-quilt">
-                    <div class="quilt-block-anim">
-                        <div class="event-inner card fabric-texture">
-                            <span class="event-date">Mar 15</span>
-                            <h3>Annual Show Entry</h3>
-                            <p>Last day to submit quilt entries</p>
-                            <p><small>Categories: Traditional, Modern, Art</small></p>
-                            <a href="show-entry-form.html" class="btn btn-primary mt-20">Enter Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Member Directory Preview -->
-    <section class="section-padding">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <div class="section-header flex-between mb-40">
-                <h2 class="stitched-text">Meet Our Members</h2>
-                <div class="search-box">
-                    <input type="text" placeholder="Find a member..." class="form-input">
-                </div>
-            </div>
-            <div class="member-grid grid-6">
-                <!-- 6 Featured Profiles -->
-                <div class="member-card card fabric-texture">
-                    <div class="quilt-frame quilted-border">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYy5injLTA7C6EMfwdaUvykC2JvhNKU3q8A&s" 
-                            alt="Garden Party Quilt">
-                    </div>
-                    <h4>Sarah Johnson</h4>
-                    <p class="specialty">Modern Quilting</p>
-                    <p class="years">15 Years Quilting</p>
-                    <a href="member-directory.html" class="text-link">View Profile</a>
-                </div>
-                <!-- Repeat 5 more times with different data -->
-                <div class="member-card card fabric-texture">
-                    <div class="member-avatar quilted-border">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Linda D.">
-                    </div>
-                    <h4>Linda Davis</h4>
-                    <p class="specialty">Traditional Patchwork</p>
-                    <p class="years">30 Years Quilting</p>
-                    <a href="member-directory.html" class="text-link">View Profile</a>
-                </div>
-                <div class="member-card card fabric-texture">
-                    <div class="member-avatar quilted-border">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="David C.">
-                    </div>
-                    <h4>David Chen</h4>
-                    <p class="specialty">Art Quilts</p>
-                    <p class="years">8 Years Quilting</p>
-                    <a href="member-directory.html" class="text-link">View Profile</a>
-                </div>
-            </div>
-            <div class="text-center mt-40">
-                <a href="member-directory.html" class="btn btn-secondary">Browse Full Directory</a>
-            </div>
-        </div>
-    </section>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1>Free Quilt</h1>
+                <p class="hero-description">With any creative hobby, you can never have too many new projects to try or
+                    too much inspiration. If you're in search of your next quilting project or just want to get
+                    inspired, you've come to the right place.</p>
+            </section>
 
-    <!-- Guild Benefits -->
-    <section class="section-padding bg-pattern">
-        <div class="container text-center">
-            <h2 class="stitched-text mb-40">Guild Benefits</h2>
-            <div class="patchwork-grid">
-                <div class="patch fabric-texture" style="background-color: var(--color-accent-1);">
-                    <i class="fas fa-book-open"></i>
-                    <h4>Library Access</h4>
-                    <p>1,000+ pattern books</p>
-                </div>
-                <div class="patch fabric-texture" style="background-color: var(--color-accent-2);">
-                    <i class="fas fa-cut"></i>
-                    <h4>Workshops</h4>
-                    <p>Monthly hands-on</p>
-                </div>
-                <div class="patch fabric-texture" style="background-color: var(--color-accent-3);">
-                    <i class="fas fa-trophy"></i>
-                    <h4>Annual Show</h4>
-                    <p>Exhibit & compete</p>
-                </div>
-                <div class="patch fabric-texture" style="background-color: var(--color-accent-4);">
-                    <i class="fas fa-user-friends"></i>
-                    <h4>Mentorship</h4>
-                    <p>Pairing with experts</p>
-                </div>
-                <div class="patch fabric-texture" style="background-color: var(--color-primary);">
-                    <i class="fas fa-shopping-bag"></i>
-                    <h4>Shop Discounts</h4>
-                    <p>20% off local stores</p>
-                </div>
-                <div class="patch fabric-texture" style="background-color: var(--color-secondary);">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <h4>Newsletter</h4>
-                    <p>Patterns & tips</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Patterns Grid -->
+            <section class="patterns-section" id="patterns">
+                <h2>Featured Free Quilt</h2>
 
-    <!-- Newsletter -->
-    <section class="section-padding">
-        <div class="container text-center">
-            <div class="quilted-border card py-40">
-                <h3 class="stitched-text">Stitch with Us!</h3>
-                <p>Get monthly patterns & guild news delivered to your inbox.</p>
-                <form class="newsletter-form mt-20">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary btn-fabric">
-                        <i class="fas fa-paper-plane mr-5"></i> Subscribe
-                    </button>
-                </form>
-                <p class="mt-10"><small>Join 800+ subscribers.</small></p>
-            </div>
+                <div class="patterns-grid">
+                    <!-- Pattern 1 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Dresden Delight Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Dresden Delight Quilt</h3>
+                            <p>Beautiful Dresden plate design perfect for intermediate quilters.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="dresden-delight">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 2 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150434/Mini-Charmer-Table-Runner-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Mini Charmer Table Runner Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Mini Charmer Table Runner</h3>
+                            <p>Charming table runner perfect for dining room decoration.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="mini-charmer">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 3 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Tetris Tumble Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Tetris Tumble Quilt</h3>
+                            <p>Fun geometric design inspired by the classic game Tetris.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="tetris-tumble">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 4 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150152/Country-Star-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Country Star Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Country Star Quilt</h3>
+                            <p>Traditional star pattern with a country-inspired twist.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="country-star">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 5 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150454/Overlapping-Lines-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Overlapping Lines Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Overlapping Lines Quilt</h3>
+                            <p>Modern geometric design with clean overlapping lines.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="overlapping-lines">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 6 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150517/Split-Chevron-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Split Chevron Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Split Chevron Quilt</h3>
+                            <p>Contemporary chevron pattern with split design elements.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="split-chevron">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 7 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150439/Modern-Angle-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Modern Angle Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Modern Angle Quilt</h3>
+                            <p>Sleek modern design with angular geometric patterns.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="modern-angle">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 8 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150229/Flying-Geese-Frenzy-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Flying Geese Frenzy Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Flying Geese Frenzy Quilt</h3>
+                            <p>Classic flying geese pattern with a modern twist.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="flying-geese">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 9 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150358/Jelly-Roll-Jumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Jelly Roll Jumble Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Jelly Roll Jumble Quilt</h3>
+                            <p>Perfect for using jelly roll precuts in a colorful design.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="jelly-roll">PDF Pattern Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 10 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/10/06142546/Let-the-sunshine-in_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Let the Sunshine In Table Runner Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Let the Sunshine In Table Runner</h3>
+                            <p>Bright and cheerful table runner to bring sunshine to your dining room.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="sunshine-runner">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 11 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150935/Carden-Glory_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Garden Glory Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Garden Glory</h3>
+                            <p>Beautiful garden-inspired quilt pattern with floral elements.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="garden-glory">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 12 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22151237/Sewing-Undercover_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Sewing Undercover Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Sewing Undercover</h3>
+                            <p>Practical sewing machine cover with decorative quilting.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="sewing-undercover">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 13 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22151232/Monogram-hanger_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="His & Hers Monogram Hanger Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>His & Hers Monogram Hanger</h3>
+                            <p>Personalized monogrammed hangers for closet organization.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="monogram-hanger">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 14 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22151407/Layered-Star-Trivet_16x9_titlecard_notext-1.jpg"
+                                alt="Layered Star Trivet Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Layered Star Trivet</h3>
+                            <p>Decorative and functional star-shaped hot pad for your table.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="star-trivet">PDF Pattern Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 15 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150544/Touring-Tote-Bag_16x9_titlecard_notext.jpg"
+                                alt="Touring Tote Bag Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Touring Tote Bag</h3>
+                            <p>Spacious and stylish tote bag perfect for travel or shopping.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="touring-tote">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 16 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150121/Cabin-Scraps-Mini-Quilt_16x9_titlecard_notext.jpg"
+                                alt="Cabin Scraps Mini Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Cabin Scraps Mini Quilt</h3>
+                            <p>Rustic mini quilt perfect for using fabric scraps.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="cabin-scraps">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 17 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22151736/Tulip-Tango-Tablerunner_16x9_titlecard_notext.jpg"
+                                alt="Tulip Tango Tablerunner Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Tulip Tango Tablerunner</h3>
+                            <p>Elegant table runner featuring tulip-inspired designs.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="tulip-tango">PDF Pattern Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 18 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22151902/Too-hot-to-handle_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Too Hot to Handle Casserole  Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Too Hot to Handle Casserole</h3>
+                            <p>Insulated casserole carrier for potlucks and gatherings.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="casserole-cover">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 19 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150328/Happy-Half-Hexagon-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Happy Half Hexagon Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Happy Half Hexagon Quilt</h3>
+                            <p>Modern hexagon quilt with fresh, cheerful colors.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="half-hexagon">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 20 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150157/Crazy-Hexagon-Coaster_NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Crazy Hexagon Coaster Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Crazy Hexagon Coaster</h3>
+                            <p>Fun and colorful hexagon coasters for your home.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="hexagon-coaster">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 21 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150508/Sapphire-Shimmer-Table-Topper-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Sapphire Shimmer Table Topper Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Sapphire Shimmer Topper</h3>
+                            <p>Elegant table topper with rich blue tones and shimmering design.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="sapphire-topper">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 22 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150513/Shamrock-Star-Placemat-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Shamrock Star Placemat Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Shamrock Star Placemat</h3>
+                            <p>Festive placemat perfect for St. Patrick's Day celebrations.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="shamrock-placemat">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 23 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150202/Diamond-Drop-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="Diamond Drop Quilt Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Diamond Drop Quilt</h3>
+                            <p>Elegant diamond pattern with cascading design elements.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="diamond-drop">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 24 -->
+                    <div class="pattern-card">
+                        <div class="pattern-image">
+                            <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150353/Its-a-Treat-Quilted-Wall-Hanging-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                alt="It's a Treat Quilted Wall Hanging Pattern" loading="lazy">
+                        </div>
+                        <div class="pattern-content">
+                            <h3>Treat Quilted Wall Hanging</h3>
+                            <p>Decorative wall hanging perfect for seasonal decoration.</p>
+                            <a href="#" class="pattern-download-btn" data-pattern="treat-wall-hanging">PDF Pattern
+                                Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured Highlights -->
+                <section class="featured-highlight-section">
+                    <div class="container">
+                        <div class="featured-content">
+                            <div class="featured-image-container">
+                                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1200&auto=format&fit=crop"
+                                    alt="Modern Geometric Quilt">
+                            </div>
+                            <div class="featured-text-container">
+                                <span class="featured-badge">Featured Pattern</span>
+                                <h2>Modern Geometric Mastery</h2>
+                                <p>Experience the perfect blend of traditional craft and contemporary design. This
+                                    intricate
+                                    geometric pattern challenge intermediate quilters while delivering a stunningly
+                                    modern
+                                    aesthetic that fits any contemporary home.</p>
+                                <a href="#" class="featured-btn">Discover the Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="featured-highlight-section">
+                    <div class="container">
+                        <div class="featured-content">
+                            <div class="featured-image-container">
+                                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop"
+                                    alt="Artisanal Heritage Quilt">
+                            </div>
+                            <div class="featured-text-container">
+                                <span class="featured-badge">Heritage Series</span>
+                                <h2>Echoes of the Past</h2>
+                                <p>A tribute to the timeless storytelling of quilting. This heritage-inspired pattern
+                                    replicates classic blocks with a modern twist on color and texture, making it the
+                                    perfect project to preserve memories for generations to come.</p>
+                                <a href="#" class="featured-btn">Learn the Story</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="about-section" id="about">
+                    <h2>About These Patterns</h2>
+                    <p>These Free Quilt patterns have been carefully selected to provide quilters of all skill levels
+                        with
+                        inspiration and clear instructions. Each pattern includes detailed measurements and assembly
+                        guides.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h3>Free Downloads</h3>
+                            <p>All patterns are available as free PDF downloads for your convenience.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Detailed Instructions</h3>
+                            <p>Each pattern includes step-by-step instructions and cutting guides.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>All Skill Levels</h3>
+                            <p>Patterns range from beginner-friendly to advanced techniques.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tutorials Section -->
+                <section class="tutorials-section" id="tutorials">
+                    <h2>Quilting Tutorials & Tips</h2>
+                    <p>Learn essential quilting techniques with our step-by-step tutorials and expert tips.</p>
+
+                    <div class="tutorials-grid">
+                        <div class="tutorial-card">
+                            <div class="tutorial-image">
+                                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
+                                    alt="Quilting Techniques">
+                            </div>
+                            <div class="tutorial-content">
+                                <h3>Quilting Techniques</h3>
+                                <p>Master the fundamentals of quilting including cutting, piecing, and pressing.</p>
+                                <ul>
+                                    <li>Accurate cutting methods</li>
+                                    <li>Perfect quarter-inch seams</li>
+                                    <li>Pressing techniques</li>
+                                    <li>Chain piecing tips</li>
+                                </ul>
+                                <a href="#" class="tutorial-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="tutorial-image">
+                                <img src="https://images.unsplash.com/photo-1517315003714-a071486bd9ea?q=80&w=800&auto=format&fit=crop"
+                                    alt="Frozen Fountain Quilt Pattern">
+                            </div>
+                            <div class="tutorial-content">
+                                <h3>Advanced Piecing: Frozen Fountain</h3>
+                                <p>Master the intricate "Frozen Fountain" design using advanced foundation paper piecing
+                                    techniques.</p>
+                                <ul>
+                                    <li>Complex geometric alignment</li>
+                                    <li>Foundation paper piecing</li>
+                                    <li>Ice crystal block construction</li>
+                                    <li>Precision point matching</li>
+                                </ul>
+                                <a href="#" class="tutorial-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="tutorial-image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Tbdwj2NNoYVk0F80OFBF2X9_ymFAl-0AIA&s"
+                                    alt="Quilting & Finishing">
+                            </div>
+                            <div class="tutorial-content">
+                                <h3>Quilting & Finishing</h3>
+                                <p>Complete your projects with professional quilting and finishing touches.</p>
+                                <ul>
+                                    <li>Basting methods</li>
+                                    <li>Machine quilting basics</li>
+                                    <li>Binding techniques</li>
+                                    <li>Label creation</li>
+                                </ul>
+                                <a href="#" class="tutorial-link">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section -->
+                <section class="resources-section" id="resources">
+                    <h2>Quilting Resources</h2>
+                    <p>Everything you need to start and complete your quilting projects successfully.</p>
+
+                    <div class="resources-grid">
+                        <div class="resource-category">
+                            <div class="resource-image">
+                                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop"
+                                    alt="Essential Tools">
+                            </div>
+                            <h3>Essential Tools</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Cutting Tools</h4>
+                                    <p>Rotary cutter, cutting mat, quilting ruler, scissors, and seam ripper.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Sewing Equipment</h4>
+                                    <p>Sewing machine, various needle sizes, quality thread, and basting tools.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Marking & Measuring</h4>
+                                    <p>Water-soluble markers, chalk pencils, measuring tapes, and square rulers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="resource-image">
+                                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop"
+                                    alt="Fabric Selection">
+                            </div>
+                            <h3>Fabric Selection</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Cotton Fabrics</h4>
+                                    <p>100% cotton is ideal for quilting - learn about different weights and weaves.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Color Theory</h4>
+                                    <p>Understanding color relationships, value, and contrast for stunning quilts.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Fabric Preparation</h4>
+                                    <p>Pre-washing, pressing, and storing your fabric properly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="resource-image">
+                                <img src="https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=800&auto=format&fit=crop"
+                                    alt="Pattern Reading">
+                            </div>
+                            <h3>Pattern Reading</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Understanding Symbols</h4>
+                                    <p>Learn common quilting abbreviations, symbols, and terminology.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Yardage Calculations</h4>
+                                    <p>How to calculate fabric requirements for any quilt size.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Modifying Patterns</h4>
+                                    <p>Tips for adjusting patterns to different sizes and personal preferences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Community Spotlight Section (Text) -->
+                <section class="content-section">
+                    <div class="container section-split">
+                        <div class="text-content">
+                            <h2>Our Shared Quilting Heritage</h2>
+                            <p>Quilting is more than just a craft; it's a living history. For centuries, makers have
+                                used
+                                needle and thread to tell stories, preserve memories, and provide comfort. At Free
+                                Quilt, we
+                                honor this legacy by bridging the gap between traditional techniques and modern
+                                artistry.
+                            </p>
+                            <p>Whether you're reproducing a classic block or exploring avant-garde textile art, you're
+                                part
+                                of a global movement that celebrates patience, precision, and the joy of hand-made
+                                creation.
+                                Our community is built on the belief that inspiration should be shared freely and that
+                                every
+                                stitch counts toward a more beautiful world.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Visual Inspiration Section (Image) -->
+                <section class="content-section" style="padding-top: 0; padding-bottom: 0;">
+                    <div class="container">
+                        <div class="image-full-width">
+                            <img src="imag/q.png" alt="Intricate Quilting Detail">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Maker's Journey Section (Text) -->
+                <section class="content-section">
+                    <div class="container">
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <h2>The Maker's Journey</h2>
+                            <p style="max-width: 700px; margin: 1rem auto; color: #718096;">Every quilter starts with a
+                                single stitch. Here's how to navigate your creative evolution with Free Quilt.</p>
+                        </div>
+                        <div class="info-columns">
+                            <div class="info-column">
+                                <h3>Lay the Foundation</h3>
+                                <p>Master the basics with our step-by-step guides. From choosing your first rotary
+                                    cutter to
+                                    understanding fabric grain, we provide the essential knowledge every beginner needs
+                                    to
+                                    succeed.</p>
+                            </div>
+                            <div class="info-column">
+                                <h3>Find Your Voice</h3>
+                                <p>Inspiration is everywhere. Learn how to translate colors from nature, architectural
+                                    shapes, and personal stories into unique quilt designs that are uniquely yours.</p>
+                            </div>
+                            <div class="info-column">
+                                <h3>Master the Finish</h3>
+                                <p>The beauty is in the details. Explore advanced longarm techniques, hand-binding
+                                    methods,
+                                    and decorative embroidery to give your work a professional, museum-quality finish.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section" id="faq">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>What skill level are these patterns suitable for?</h3>
+                            <p>Our patterns range from beginner to advanced. Each pattern includes a difficulty rating
+                                and
+                                detailed instructions suitable for the specified skill level.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Can I sell quilts made from these patterns?</h3>
+                            <p>Most free patterns allow for personal use and small-scale selling. Always check the
+                                specific
+                                pattern's licensing terms before selling items made from the pattern.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>What fabric should I use for my first quilt?</h3>
+                            <p>We recommend 100% cotton quilting fabric for beginners. It's easy to work with, presses
+                                well,
+                                and creates durable quilts.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>How do I choose the right batting?</h3>
+                            <p>Consider your quilt's intended use. Cotton batting is traditional and breathable, while
+                                polyester provides more warmth and is lighter.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>What size should my quilt backing be?</h3>
+                            <p>Your backing should be 4-6 inches larger than your quilt top on all sides to allow for
+                                quilting and trimming.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>How do I prevent fabric fraying?</h3>
+                            <p>Use sharp tools, handle fabric gently, and consider using fray check on edges that will
+                                receive heavy use.</p>
+                        </div>
+                    </div>
+                </section>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo" style="color: white; margin-bottom: 20px;">
-                        <i class="fas fa-quilt"></i>
-                        <span>Our Guild</span>
+                <!-- Brand Column -->
+                <div class="footer-column footer-brand">
+                    <h3>Free Quilt</h3>
+                    <p>Your source for inspiring quilting projects and free patterns. Join our community of passionate
+                        crafters from around the world.</p>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-link" title="Facebook">FB</a>
+                        <a href="#" class="social-link" title="Instagram">IG</a>
+                        <a href="#" class="social-link" title="Pinterest">PN</a>
+                        <a href="#" class="social-link" title="Twitter">TW</a>
                     </div>
-                    <p>Fostering creativity and community through the art of quilting since 1985.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
-                        <li><a href="show-entry-form.html">Show Entry</a></li>
+
+                <!-- Navigation Column -->
+                <div class="footer-column">
+                    <h4>Quick Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="#about">About Free Quilt</a></li>
+                        <li><a href="members.html">Member Directory</a></li>
+                        <li><a href="forms.html">Show Entry Forms</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+
+                <!-- Resources Column -->
+                <div class="footer-column">
                     <h4>Resources</h4>
-                    <ul>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html">Member Portal</a></li>
+                    <ul class="footer-nav-list">
+                        <li><a href="#patterns">Free Patterns</a></li>
+                        <li><a href="#">Quilting Tutorials</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="dashboard.html">My Dashboard</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
+
+                <!-- Newsletter Column -->
+                <div class="footer-column footer-newsletter">
+                    <h4>Join Our Newsletter</h4>
+                    <p>Receive weekly updates with new patterns and exclusive tips.</p>
+                    <form class="newsletter-form">
+
+                    </form>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Quilting Guild. All rights reserved. Hand-stitched with love.</p>
+                <p>&copy; 2026 Free Quilt. Static website.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/animations.js"></script>
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
