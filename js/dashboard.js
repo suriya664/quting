@@ -5,9 +5,9 @@ class Dashboard {
 
     // Initialize Dashboard
     static init() {
+        this.setupMobileMenu();
         this.checkAuth();
         this.setupUserMenu();
-        this.setupMobileMenu();
         this.loadUserData();
         this.setupEventListeners();
         this.initializeCharts();
@@ -19,8 +19,21 @@ class Dashboard {
         this.currentUser = Auth.getCurrentUser();
 
         if (!this.currentUser) {
-            window.location.href = 'login.html';
-            return;
+            // Bypass login for direct access
+            this.currentUser = {
+                firstName: 'Guest',
+                lastName: 'User',
+                email: 'guest@example.com',
+                skillLevel: 'beginner',
+                stats: {
+                    patternsDownloaded: 0,
+                    activeProjects: 0,
+                    daysStreak: 0
+                },
+                favorites: []
+            };
+            // window.location.href = 'login.html';
+            // return;
         }
 
         this.updateUserInterface();

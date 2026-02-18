@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
-
+    <!-- Favicon -->
+    <link rel="icon" href="imag/q.png" type="image/png">
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -20,6 +21,13 @@
 
 <body>
     <div class="dashboard-wrapper">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="sidebar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <!-- Sidebar Navigation -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
@@ -57,11 +65,7 @@
         <div class="dashboard-main-content">
             <!-- Mobile Top Nav -->
             <div class="mobile-top-bar">
-                <button class="menu-toggle" id="sidebar-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+
                 <div class="mobile-logo">
                     <h1>Free Quilt</h1>
                 </div>
@@ -319,14 +323,10 @@
     </div> <!-- End of .dashboard-wrapper -->
 
     <!-- JavaScript -->
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
     <script src="js/dashboard.js"></script>
-    <script>
-        // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function () {
-            Dashboard.init();
-        });
-    </script>
+    <!-- Dashboard initialized in dashboard.js -->
 </body>
 
 </html>

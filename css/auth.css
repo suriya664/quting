@@ -413,8 +413,9 @@
 
 /* Auth Footer */
 .auth-footer {
-    display: none;
-    /* Removed as per request */
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: auto;
 }
 
 .auth-footer .container {
@@ -428,6 +429,10 @@
 .auth-footer p {
     color: white;
     margin: 0;
+}
+
+.auth-footer .footer-social-links {
+    margin-top: 0;
 }
 
 .footer-links {

@@ -72,18 +72,18 @@ class Auth {
 
         // Check credentials
         const user = this.users.find(u => u.email === email && u.password === password);
-        
+
         if (user) {
             // Login successful
             this.currentUser = user;
             localStorage.setItem('currentUser', JSON.stringify(user));
-            
+
             if (remember) {
                 localStorage.setItem('rememberMe', 'true');
             }
 
             this.showNotification('Login successful! Redirecting...', 'success');
-            
+
             setTimeout(() => {
                 window.location.href = 'dashboard.html';
             }, 1500);
@@ -206,7 +206,7 @@ class Auth {
         localStorage.setItem('currentUser', JSON.stringify(newUser));
 
         this.showNotification('Account created successfully! Redirecting...', 'success');
-        
+
         setTimeout(() => {
             window.location.href = 'dashboard.html';
         }, 1500);
@@ -220,7 +220,7 @@ class Auth {
             toggle.addEventListener('click', () => {
                 const input = toggle.previousElementSibling;
                 const icon = toggle.querySelector('.eye-icon');
-                
+
                 if (input.type === 'password') {
                     input.type = 'text';
                     icon.textContent = '🙈';
@@ -236,7 +236,7 @@ class Auth {
     static setupPasswordConfirmation() {
         const password = document.getElementById('password');
         const confirmPassword = document.getElementById('confirmPassword');
-        
+
         if (password && confirmPassword) {
             confirmPassword.addEventListener('input', () => {
                 if (confirmPassword.value && password.value !== confirmPassword.value) {
@@ -309,11 +309,11 @@ class Auth {
     static showError(fieldId, message) {
         const field = document.getElementById(fieldId);
         const error = document.getElementById(`${fieldId}-error`);
-        
+
         if (field) {
             field.classList.add('error');
         }
-        
+
         if (error) {
             error.textContent = message;
         }
@@ -323,11 +323,11 @@ class Auth {
     static clearError(fieldId) {
         const field = document.getElementById(fieldId);
         const error = document.getElementById(`${fieldId}-error`);
-        
+
         if (field) {
             field.classList.remove('error');
         }
-        
+
         if (error) {
             error.textContent = '';
         }
@@ -347,7 +347,7 @@ class Auth {
     static setButtonLoading(button, loading) {
         const btnText = button.querySelector('.btn-text');
         const btnLoader = button.querySelector('.btn-loader');
-        
+
         if (loading) {
             button.disabled = true;
             btnText.style.display = 'none';
@@ -364,14 +364,14 @@ class Auth {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.textContent = message;
-        
+
         document.body.appendChild(notification);
-        
+
         // Trigger animation
         setTimeout(() => {
             notification.classList.add('show');
         }, 100);
-        
+
         // Remove after 3 seconds
         setTimeout(() => {
             notification.classList.remove('show');
@@ -401,7 +401,7 @@ class Auth {
         if (this.currentUser) {
             Object.assign(this.currentUser, updates);
             localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-            
+
             // Update in users array
             const userIndex = this.users.findIndex(u => u.id === this.currentUser.id);
             if (userIndex !== -1) {
@@ -417,7 +417,7 @@ class Auth {
             if (!this.currentUser.favorites) {
                 this.currentUser.favorites = [];
             }
-            
+
             if (!this.currentUser.favorites.includes(patternId)) {
                 this.currentUser.favorites.push(patternId);
                 this.updateUserProfile(this.currentUser);
@@ -446,12 +446,12 @@ class Auth {
             if (!this.currentUser.downloads) {
                 this.currentUser.downloads = [];
             }
-            
+
             this.currentUser.downloads.push({
                 patternId,
                 timestamp: new Date().toISOString()
             });
-            
+
             this.currentUser.stats.patternsDownloaded++;
             this.updateUserProfile(this.currentUser);
         }
