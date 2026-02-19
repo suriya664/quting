@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Quilting Guild</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-quilt"></i>
+                <span>Our Guild</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index-v2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Member
+                    Login</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <h1 class="stitched-text">Welcome to Our Quilting Guild</h1>
+            <p class="hero-subtitle">Where tradition meets creativity in every stitch</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn btn-primary btn-fabric">Join Our Guild</a>
+                <a href="workshops.html" class="btn btn-secondary">Explore Workshops</a>
+            </div>
+        </div>
+        <div class="hero-patches">
+            <div class="patch patch-1"><i class="fas fa-quilt"></i></div>
+            <div class="patch patch-2"><i class="fas fa-cut"></i></div>
+            <div class="patch patch-3"><i class="fas fa-thread"></i></div>
+            <div class="patch patch-4"><i class="fas fa-ruler"></i></div>
+            <div class="patch patch-5"><i class="fas fa-needle"></i></div>
+            <div class="patch patch-6"><i class="fas fa-palette"></i></div>
+        </div>
+    </section>
+
+    <!-- Featured Quilt -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="featured-quilt-row reveal">
+                <div class="quilt-image-col">
+                    <div class="quilt-frame">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYy5injLTA7C6EMfwdaUvykC2JvhNKU3q8A&s" 
+                            alt="Garden Party Quilt">
+                    </div>
+                </div>
+                <div class="quilt-details-col">
+                    <h5>Featured Quilt of the Month</h5>
+                    <h2>Garden Party</h2>
+                    <p>This stunning piece was inspired by a spring garden in full bloom. It features over 150 unique fabric patterns and intricate hand-quilted details.</p>
+                    <p><strong>Quilter:</strong> Barbara Johnson</p>
+                    <p><strong>Technique:</strong> Appliqué + Hand Quilting</p>
+                    <p><strong>Size:</strong> 80" x 90"</p>
+                    <p><strong>Time:</strong> 120 Hours</p>
+                    <a href="#" class="text-link">View Full Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="flex-between mb-40">
+                <h2 class="stitched-text reveal">Upcoming Events</h2>
+                <a href="#" class="btn btn-secondary reveal">View Calendar</a>
+            </div>
+            <div class="events-carousel reveal">
+                <!-- Event 1 -->
+                <div class="event-card-quilt card fabric-texture">
+                    <div class="event-inner">
+                        <div class="event-date">MAR 15</div>
+                        <h3>Spring Quilt Show</h3>
+                        <p>Annual exhibition featuring members' best work from the past year.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 10:00 AM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Community Center</span>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-20">Register Entry</a>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="event-card-quilt card fabric-texture">
+                    <div class="event-inner">
+                        <div class="event-date">MAR 22</div>
+                        <h3>Beginner Workshop</h3>
+                        <p>Learn the basics of quilting from experienced guild members.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 2:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Guild Studio</span>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-20">Sign Up</a>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="event-card-quilt card fabric-texture">
+                    <div class="event-inner">
+                        <div class="event-date">APR 5</div>
+                        <h3>Charity Quilt Day</h3>
+                        <p>Join us in making quilts for local hospitals and shelters.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 9:00 AM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Guild Hall</span>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-20">Volunteer</a>
+                    </div>
+                </div>
+                <!-- Event 4 -->
+                <div class="event-card-quilt card fabric-texture">
+                    <div class="event-inner">
+                        <div class="event-date">APR 18</div>
+                        <h3>Guest Speaker: Sarah Miller</h3>
+                        <p>Renowned quilter shares her journey and techniques.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-20">RSVP</a>
+                    </div>
+                </div>
+                <!-- Event 5 -->
+                <div class="event-card-quilt card fabric-texture">
+                    <div class="event-inner">
+                        <div class="event-date">MAY 2</div>
+                        <h3>Annual Meeting</h3>
+                        <p>Elections, budget review, and planning for next year.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 6:30 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Guild Hall</span>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-20">Attend</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Spotlight -->
+    <section class="section-padding bg-pattern">
+        <div class="container">
+            <h2 class="stitched-text text-center mb-40 reveal">Member Spotlight</h2>
+            <div class="grid-3 reveal">
+                <!-- Member 1 -->
+                <div class="card fabric-texture">
+                    <div class="member-avatar">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYy5injLTA7C6EMfwdaUvykC2JvhNKU3q8A&s" 
+                            alt="Garden Party Quilt">
+                    </div>
+                    <h4>Sarah Johnson</h4>
+                    <p class="specialty">Modern Quilting</p>
+                    <p class="years">15 Years Quilting</p>
+                    <p class="bio">"I love experimenting with bold colors and geometric patterns that challenge traditional quilting norms."</p>
+                    <a href="#" class="btn btn-secondary btn-sm mt-20">View Profile</a>
+                </div>
+                <!-- Member 2 -->
+                <div class="card fabric-texture">
+                    <div class="member-avatar">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Member">
+                    </div>
+                    <h4>Linda Davis</h4>
+                    <p class="specialty">Traditional</p>
+                    <p class="years">22 Years Quilting</p>
+                    <p class="bio">"Preserving heritage techniques while teaching the next generation the art of hand quilting."</p>
+                    <a href="#" class="btn btn-secondary btn-sm mt-20">View Profile</a>
+                </div>
+                <!-- Member 3 -->
+                <div class="card fabric-texture">
+                    <div class="member-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Member">
+                    </div>
+                    <h4>Michael Chen</h4>
+                    <p class="specialty">Art Quilts</p>
+                    <p class="years">8 Years Quilting</p>
+                    <p class="bio">"Creating narrative quilts that tell stories through fabric and thread, blending art with tradition."</p>
+                    <a href="#" class="btn btn-secondary btn-sm mt-20">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-padding bg-secondary">
+        <div class="container">
+            <div class="newsletter-section reveal">
+                <h2 class="stitched-text">Stay Connected</h2>
+                <p>Get the latest news, workshop announcements, and quilting tips delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary btn-fabric">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-quilt"></i>
+                        <span>Our Guild</span>
+                    </div>
+                    <p>Fostering creativity and community through the art of quilting since 1985.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="show-entry-form.html">Show Entry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Member Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quilting Guild. All rights reserved. Hand-stitched with love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
