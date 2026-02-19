@@ -39,6 +39,7 @@
     padding: 2rem 0;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .sidebar-link {
@@ -341,6 +342,9 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -374,6 +378,9 @@
 
 .project-content {
     padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-content h3 {
@@ -393,6 +400,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 }
 
 .status-badge {

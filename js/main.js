@@ -61,11 +61,19 @@ function setupAuthEventListeners() {
 
     // Logout button
     const logoutBtn = document.getElementById('header-logout-btn');
+    const sidebarLogoutBtn = document.getElementById('sidebar-logout-btn');
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        Auth.logout();
+    };
+
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            Auth.logout();
-        });
+        logoutBtn.addEventListener('click', handleLogout);
+    }
+
+    if (sidebarLogoutBtn) {
+        sidebarLogoutBtn.addEventListener('click', handleLogout);
     }
 
     // Listen for auth state changes
@@ -111,11 +119,15 @@ function initMobileMenu() {
 
 // Pattern Modal Functionality
 function initPatternModals() {
+    const downloadBtns = document.querySelectorAll('.pattern-download-btn');
+
+    // Only initialize modal if there are download buttons on the page
+    if (downloadBtns.length === 0) return;
+
     const modal = createModal();
     document.body.appendChild(modal);
 
     // Add click handlers to all pattern download buttons
-    const downloadBtns = document.querySelectorAll('.pattern-download-btn');
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();

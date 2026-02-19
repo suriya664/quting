@@ -580,6 +580,25 @@
     gap: 1.5rem;
 }
 
+.enhanced-form-container .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.pattern-download-btn {
+    width: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
 .form-group.full-width {
     grid-column: span 2;
 }
@@ -609,6 +628,7 @@
 
 .enhanced-form .radio-group {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 0.5rem;
 }
@@ -617,6 +637,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .form-section-title {
@@ -641,4 +662,24 @@
     .form-section-title {
         grid-column: span 1;
     }
+}
+
+@media (max-width: 992px) {
+    .enhanced-form-container {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+
+    .form-actions .pattern-download-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.other-forms .pattern-content {
+    text-align: center;
+    align-items: center;
 }
