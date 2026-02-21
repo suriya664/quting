@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Form - Free Quilt</title>
+    <meta name="description" content="Membership form with 15 required fields.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <style>
+        .form-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.65rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: #fff;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-group input {
+            width: auto;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .form-nav {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--primary-bg);
+            border: 1px solid var(--divider-color);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background: #f1f5f9;
+            border-color: #667eea;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="form-container">
+                    <div class="auth-card-logo">
+                        <a href="index.html" class="logo">
+                            <h1>Free Quilt</h1>
+                        </a>
+                    </div>
+                    <div class="form-nav">
+                        <a href="index.html" class="nav-btn">
+                            <i class="fas fa-home"></i> Back to Home
+                        </a>
+                        <a href="member.html" class="nav-btn">
+                            <i class="fas fa-users"></i> View Members
+                        </a>
+
+                        <button id="logout-btn" class="nav-btn logout-btn" title="Logout" style="display: none;">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                        <button id="theme-toggle" class="nav-btn theme-btn" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <div class="form-header">
+                        <h2>Membership Registration</h2>
+                        <p>Plese fill out the form below to become a member</p>
+                    </div>
+
+                    <form class="auth-form" id="membership-form">
+                        <div class="form-grid">
+                            <!-- 1. Full Name -->
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    required>
+                            </div>
+
+                            <!-- 2. Email -->
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                            </div>
+
+                            <!-- 3. Phone -->
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                            </div>
+
+                            <!-- 4. Date of Birth -->
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+
+                            <!-- 5. Gender -->
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+
+                            <!-- 6. Qualification -->
+                            <div class="form-group">
+                                <label for="qualification">Qualification</label>
+                                <input type="text" id="qualification" name="qualification"
+                                    placeholder="Highest degree/certification" required>
+                            </div>
+
+                            <!-- 7. Current Status -->
+                            <div class="form-group">
+                                <label for="currentStatus">Current Status</label>
+                                <select id="currentStatus" name="currentStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option value="student">Student</option>
+                                    <option value="employed">Employed</option>
+                                    <option value="self-employed">Self-Employed</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- 8. Interested Course -->
+                            <div class="form-group">
+                                <label for="course">Interested Course</label>
+                                <input type="text" id="course" name="course" placeholder="e.g. Master Quilting"
+                                    required>
+                            </div>
+
+                            <!-- 9. Preferred Location -->
+                            <div class="form-group">
+                                <label for="location">Preferred Location</label>
+                                <input type="text" id="location" name="location" placeholder="City, Country" required>
+                            </div>
+
+                            <!-- 10. Experience -->
+                            <div class="form-group">
+                                <label for="experience">Experience (Years)</label>
+                                <input type="number" id="experience" name="experience" min="0" placeholder="0" required>
+                            </div>
+
+                            <!-- 11. Career Goal -->
+                            <div class="form-group">
+                                <label for="careerGoal">Career Goal</label>
+                                <input type="text" id="careerGoal" name="careerGoal"
+                                    placeholder="Where do you see yourself in 5 years?" required>
+                            </div>
+
+                            <!-- 12. LinkedIn Profile -->
+                            <div class="form-group">
+                                <label for="linkedin">LinkedIn Profile</label>
+                                <input type="url" id="linkedin" name="linkedin"
+                                    placeholder="https://linkedin.com/in/username" required>
+                            </div>
+
+                            <!-- 13. Resume Upload -->
+                            <div class="form-group full-width">
+                                <label for="resume">Resume Upload</label>
+                                <input type="file" id="resume" name="resume" required>
+                            </div>
+
+                            <!-- 14. Message -->
+                            <div class="form-group full-width">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4"
+                                    placeholder="Tell us more about yourself..." required></textarea>
+                            </div>
+
+                            <!-- 15. Terms & Conditions -->
+                            <div class="form-group full-width checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the Terms & Conditions</label>
+                            </div>
+                        </div>
+
+                        <div class="submit-container">
+                            <button type="submit" class="submit-btn">Submit Membership Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,15 +1,28 @@
 // Main JavaScript for Free Quilt Website
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize all functionality with error handling
-    try { initAuthState(); } catch (e) { console.error('Auth Init Failed:', e); }
-    try { initMobileMenu(); } catch (e) { console.error('Mobile Menu Init Failed:', e); }
-    try { initPatternModals(); } catch (e) { console.error('Modals Init Failed:', e); }
-    try { initSmoothScrolling(); } catch (e) { console.error('Smooth Scroll Init Failed:', e); }
-    try { initLazyLoading(); } catch (e) { console.error('Lazy Loading Init Failed:', e); }
-    try { initSearchFunctionality(); } catch (e) { console.error('Search Init Failed:', e); }
-    try { initFilterFunctionality(); } catch (e) { console.error('Filter Init Failed:', e); }
-    try { initDownloadTracking(); } catch (e) { console.error('Download Tracking Init Failed:', e); }
+    // Initialize all functionality with basic error handling
+    try {
+        if (typeof Auth !== 'undefined') {
+            initAuthState();
+        }
+        initMobileMenu();
+        initPatternModals();
+        initSmoothScrolling();
+        initLazyLoading();
+        initSearchFunctionality();
+        initFilterFunctionality();
+        initDownloadTracking();
+    } catch (error) {
+        console.warn('Non-critical initialization error:', error);
+    }
+
+    try {
+        initThemeToggle();
+        initLogout();
+    } catch (error) {
+        console.error('Critical initialization error (Theme Toggle/Logout):', error);
+    }
 });
 
 // Initialize Authentication State
@@ -23,18 +36,44 @@ function updateAuthUI() {
     const currentUser = Auth.getCurrentUser();
     const authLinks = document.getElementById('auth-links');
     const userMenu = document.getElementById('user-menu');
-    const headerUserName = document.getElementById('header-user-name');
+    const logoutBtns = document.querySelectorAll('#logout-btn, .logout-btn');
+    const isDashboardPage = window.location.pathname.toLowerCase().includes('dashboard.html');
+
+    // Handle Logo and Dashboard links
+    document.querySelectorAll('.logo, .dashboard-btn').forEach(link => {
+        link.href = 'dashboard.html';
+    });
 
     if (currentUser) {
         // User is logged in
         if (authLinks) authLinks.style.display = 'none';
         if (userMenu) userMenu.style.display = 'flex';
         if (headerUserName) headerUserName.textContent = `${currentUser.firstName} ${currentUser.lastName}`;
+        logoutBtns.forEach(btn => btn.style.display = 'flex');
     } else {
         // User is logged out
         if (authLinks) authLinks.style.display = 'flex';
         if (userMenu) userMenu.style.display = 'none';
+        logoutBtns.forEach(btn => btn.style.display = isDashboardPage ? 'flex' : 'none');
     }
+}
+
+// Global logout hook for main pages
+function initLogout() {
+    const logoutBtns = document.querySelectorAll('#logout-btn, .logout-btn');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (typeof Auth !== 'undefined' && Auth.logout) {
+                Auth.logout();
+            } else {
+                // Fallback logout
+                localStorage.removeItem('currentUser');
+                localStorage.removeItem('rememberMe');
+                window.location.href = 'index.html';
+            }
+        });
+    });
 }
 
 // Setup Auth Event Listeners
@@ -61,19 +100,11 @@ function setupAuthEventListeners() {
 
     // Logout button
     const logoutBtn = document.getElementById('header-logout-btn');
-    const sidebarLogoutBtn = document.getElementById('sidebar-logout-btn');
-
-    const handleLogout = (e) => {
-        e.preventDefault();
-        Auth.logout();
-    };
-
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', handleLogout);
-    }
-
-    if (sidebarLogoutBtn) {
-        sidebarLogoutBtn.addEventListener('click', handleLogout);
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            Auth.logout();
+        });
     }
 
     // Listen for auth state changes
@@ -86,48 +117,49 @@ function setupAuthEventListeners() {
 
 // Mobile Menu Toggle
 function initMobileMenu() {
-    const mobileToggle = document.getElementById('main-mobile-toggle');
-    const sidebar = document.getElementById('main-mobile-sidebar');
-    const overlay = document.getElementById('main-sidebar-overlay');
-    const closeBtn = document.getElementById('close-sidebar');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
 
-    if (mobileToggle && sidebar && overlay) {
-        // Open sidebar
-        mobileToggle.addEventListener('click', () => {
-            sidebar.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+    if (mobileToggle && mainMenu) {
+        mobileToggle.addEventListener('click', function () {
+            mainMenu.classList.toggle('active');
+
+            // Animate hamburger menu
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach((span, index) => {
+                span.style.transform = mainMenu.classList.contains('active')
+                    ? getHamburgerTransform(index)
+                    : '';
+            });
         });
 
-        // Close functions
-        const closeSidebar = () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
-
-        // Close when clicking a link
-        const sidebarLinks = sidebar.querySelectorAll('.mobile-nav-link');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', closeSidebar);
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!mobileToggle.contains(e.target) && !mainMenu.contains(e.target)) {
+                mainMenu.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                spans.forEach(span => span.style.transform = '');
+            }
         });
     }
 }
 
+function getHamburgerTransform(index) {
+    const transforms = [
+        'rotate(45deg) translate(5px, 5px)',
+        'opacity: 0',
+        'rotate(-45deg) translate(7px, -6px)'
+    ];
+    return transforms[index];
+}
+
 // Pattern Modal Functionality
 function initPatternModals() {
-    const downloadBtns = document.querySelectorAll('.pattern-download-btn');
-
-    // Only initialize modal if there are download buttons on the page
-    if (downloadBtns.length === 0) return;
-
     const modal = createModal();
     document.body.appendChild(modal);
 
     // Add click handlers to all pattern download buttons
+    const downloadBtns = document.querySelectorAll('.pattern-download-btn');
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -577,3 +609,31 @@ const notificationStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = notificationStyles;
 document.head.appendChild(styleSheet);
+
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    if (!themeToggle || !icon) return;
+
+    // Check for saved theme preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+
+        if (body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            localStorage.setItem('theme', 'light');
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+    });
+}

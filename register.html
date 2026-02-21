@@ -2,37 +2,46 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Free Quilt</title>
-    <meta name="description"
-        content="Create your account to access exclusive Free Quilt patterns and save your favorites.">
+    <meta name="description" content="Create your account to access exclusive quilt patterns and save your favorites.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" href="imag/q.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/auth.css">
 </head>
 
 <body class="auth-page">
+
+
     <!-- Main Content -->
     <main class="auth-main">
         <div class="container">
             <div class="auth-container">
                 <div class="auth-form-wrapper">
                     <div class="auth-form-card">
-                        <div class="card-logo">
+                        <div class="auth-card-logo">
                             <a href="index.html" class="logo">
                                 <h1>Free Quilt</h1>
                             </a>
                         </div>
+                        <div class="auth-nav-actions" style="position: absolute; top: 1rem; right: 1rem;">
+                            <button id="theme-toggle" class="nav-icon-btn theme-btn"
+                                style="background: none; border: none; cursor: pointer; color: var(--text-main); font-size: 1.2rem;">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </div>
                         <div class="auth-header-content">
                             <h2>Create Account</h2>
-                            <p>Join our quilting community and unlock exclusive features</p>
+                            <p>Join our quilting community</p>
                         </div>
 
                         <form id="register-form" class="auth-form">
@@ -93,126 +102,41 @@
                                 <span class="form-error" id="confirmPassword-error"></span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="skillLevel">Quilting Skill Level</label>
-                                <select id="skillLevel" name="skillLevel" required>
-                                    <option value="">Select your skill level</option>
-                                    <option value="beginner">Beginner</option>
-                                    <option value="intermediate">Intermediate</option>
-                                    <option value="advanced">Advanced</option>
-                                    <option value="expert">Expert</option>
-                                </select>
-                                <span class="form-error" id="skillLevel-error"></span>
-                            </div>
-
-                            <div class="form-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="newsletter" name="newsletter" checked>
-                                    <span class="checkbox-custom"></span>
-                                    Send me quilting tips and new pattern notifications
-                                </label>
-                            </div>
-
-                            <div class="form-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="terms" name="terms" required>
-                                    <span class="checkbox-custom"></span>
-                                    I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#"
-                                        class="auth-link">Privacy Policy</a>
-                                </label>
-                                <span class="form-error" id="terms-error"></span>
-                            </div>
-
                             <button type="submit" class="auth-btn primary" id="register-btn">
                                 <span class="btn-text">Create Account</span>
                                 <span class="btn-loader" style="display: none;">Creating account...</span>
                             </button>
 
                             <div class="auth-divider">
-                                <span></span>
+                                <span>or sign up with</span>
                             </div>
 
                             <div class="social-login">
                                 <button type="button" class="social-btn google">
-                                    <span class="social-icon">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                                fill="#4285F4" />
-                                            <path
-                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                                fill="#34A853" />
-                                            <path
-                                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                                                fill="#FBBC05" />
-                                            <path
-                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                                fill="#EA4335" />
-                                        </svg>
-                                    </span>
+                                    <i class="fa-brands fa-google social-icon"></i>
                                     Google
                                 </button>
                                 <button type="button" class="social-btn facebook">
-                                    <span class="social-icon">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                        </svg>
-                                    </span>
+                                    <i class="fa-brands fa-facebook-f social-icon"></i>
                                     Facebook
                                 </button>
-                            </div>
-
-                            <div class="auth-switch">
-                                Already have an account? <a href="login.html">Sign in</a>
                             </div>
                         </form>
                     </div>
 
+                    <div class="auth-header-content"
+                        style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                        <p>Already have an account? <a href="login.html" class="auth-link" style="color: #667eea;">Sign
+                                in</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Auth Footer -->
-    <footer class="auth-footer">
-        <div class="container">
-            <p>&copy; 2026 Free Quilt</p>
-            <div class="footer-social-links">
-                <a href="#" class="social-link" title="Facebook">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" title="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" title="Pinterest">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0C5.373 0 0 5.373 0 12c0 4.99 3.063 9.253 7.425 11.178-.103-.948-.198-2.405.04-3.44.214-.926 1.385-5.865 1.385-5.865s-.354-.708-.354-1.755c0-1.645.954-2.874 2.143-2.874 1.01 0 1.498.758 1.498 1.668 0 1.017-.648 2.537-.982 3.947-.28.1.18 1.408 1.45 1.408 1.74 0 3.08-1.834 3.08-4.48 0-2.365-1.698-4.018-4.125-4.018-2.805 0-4.453 2.104-4.453 4.28 0 .847.326 1.755.733 2.25.08.098.092.183.068.283-.074.307-.238.966-.27.11-.043-.198-.154-.345-.355-.42-1.323-.49-2.148-2.03-2.148-3.27 0-2.66 1.933-5.104 5.578-5.104 2.924 0 5.196 2.085 5.196 4.87 0 2.906-1.83 5.244-4.37 5.244-1.22 0-2.368-.636-2.76-1.387l-.752 2.87c-.272 1.045-1.01 2.355-1.503 3.155.91-.012 1.344-.023 2.278-.023 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="#" class="social-link" title="Twitter">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-
     <!-- JavaScript -->
     <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
     <script>
         // Initialize register page
         document.addEventListener('DOMContentLoaded', function () {

@@ -5,38 +5,34 @@ class Dashboard {
 
     // Initialize Dashboard
     static init() {
-        this.setupMobileMenu();
-        this.checkAuth();
         this.setupUserMenu();
+        this.setupMobileMenu();
+        this.initSidebar(); // Added this line
         this.loadUserData();
         this.setupEventListeners();
         this.initializeCharts();
         this.startRealTimeUpdates();
     }
 
-    // Check Authentication
-    static checkAuth() {
-        this.currentUser = Auth.getCurrentUser();
+    // Initialize Sidebar
+    static initSidebar() {
+        const toggleBtn = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('dashboard-sidebar');
 
-        if (!this.currentUser) {
-            // Bypass login for direct access
-            this.currentUser = {
-                firstName: 'Guest',
-                lastName: 'User',
-                email: 'guest@example.com',
-                skillLevel: 'beginner',
-                stats: {
-                    patternsDownloaded: 0,
-                    activeProjects: 0,
-                    daysStreak: 0
-                },
-                favorites: []
-            };
-            // window.location.href = 'login.html';
-            // return;
+        if (toggleBtn && sidebar) {
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992 &&
+                    !sidebar.contains(e.target) &&
+                    !toggleBtn.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
         }
-
-        this.updateUserInterface();
     }
 
     // Update User Interface
@@ -147,36 +143,29 @@ class Dashboard {
 
     // Setup Mobile Menu
     static setupMobileMenu() {
-        const mobileToggle = document.getElementById('sidebar-toggle');
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mainMenu = document.getElementById('main-menu');
 
-        if (mobileToggle && sidebar && overlay) {
+        if (mobileToggle && mainMenu) {
             mobileToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-                mobileToggle.classList.toggle('active');
+                mainMenu.classList.toggle('active');
 
-                // Prevent body scroll when menu is open
-                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
-            });
-
-            // Close menu when clicking overlay
-            overlay.addEventListener('click', () => {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            // Close menu when clicking a link
-            sidebar.querySelectorAll('.sidebar-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    sidebar.classList.remove('active');
-                    overlay.classList.remove('active');
-                    mobileToggle.classList.remove('active');
-                    document.body.style.overflow = '';
+                // Animate hamburger menu
+                const spans = mobileToggle.querySelectorAll('span');
+                spans.forEach((span, index) => {
+                    span.style.transform = mainMenu.classList.contains('active')
+                        ? this.getHamburgerTransform(index)
+                        : '';
                 });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileToggle.contains(e.target) && !mainMenu.contains(e.target)) {
+                    mainMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans.forEach(span => span.style.transform = '');
+                }
             });
         }
     }
@@ -246,7 +235,7 @@ class Dashboard {
                 name: 'Dresden Delight Quilt',
                 image: 'https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg',
                 progress: 75,
-                started: 'Jan 15, 2026',
+                started: 'Jan 15, 2024',
                 due: 'Feb 1',
                 status: 'in-progress'
             },
@@ -255,7 +244,7 @@ class Dashboard {
                 name: 'Mini Charmer Table Runner',
                 image: 'https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150434/Mini-Charmer-Table-Runner-NQC_TitleCards_16x9_titlecard_notext.jpg',
                 progress: 30,
-                started: 'Jan 20, 2026',
+                started: 'Jan 20, 2024',
                 due: 'Feb 5',
                 status: 'in-progress'
             },
@@ -264,7 +253,7 @@ class Dashboard {
                 name: 'Tetris Tumble Quilt',
                 image: 'https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg',
                 progress: 10,
-                started: 'Jan 22, 2026',
+                started: 'Jan 22, 2024',
                 due: 'Feb 15',
                 status: 'planning'
             }

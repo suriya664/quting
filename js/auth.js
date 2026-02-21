@@ -4,6 +4,14 @@ class Auth {
     static users = JSON.parse(localStorage.getItem('users') || '[]');
     static currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
+    // Get Current User
+    static getCurrentUser() {
+        if (!this.currentUser) {
+            this.currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        }
+        return this.currentUser;
+    }
+
     // Initialize Login Page
     static initLoginPage() {
         this.setupLoginForm();

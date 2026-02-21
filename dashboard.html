@@ -12,321 +12,336 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" href="imag/q.png" type="image/png">
+
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
-    <div class="dashboard-wrapper">
-        <!-- Mobile Menu Toggle -->
-        <button class="menu-toggle" id="sidebar-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle Sidebar">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-        <!-- Sidebar Navigation -->
-        <aside class="dashboard-sidebar">
-            <div class="sidebar-header">
+    <div class="dashboard-wrapper">
+        <!-- Dashboard Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-logo">
                 <a href="index.html" class="logo">
                     <h1>Free Quilt</h1>
                 </a>
             </div>
+
             <nav class="sidebar-nav">
                 <a href="index.html" class="sidebar-link">
-                    <span class="sidebar-icon">🏠</span> Home
+                    <span class="sidebar-icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="sidebar-text">Home</span>
                 </a>
                 <a href="dashboard.html" class="sidebar-link active">
-                    <span class="sidebar-icon">📊</span> Dashboard
+                    <span class="sidebar-icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="sidebar-text">Dashboard</span>
                 </a>
-                <a href="members.html" class="sidebar-link">
-                    <span class="sidebar-icon">👥</span> Members
+                <a href="#patterns" class="sidebar-link">
+                    <span class="sidebar-icon"><i class="fa-solid fa-palette"></i></span>
+                    <span class="sidebar-text">Patterns</span>
                 </a>
-                <a href="forms.html" class="sidebar-link">
-                    <span class="sidebar-icon">📝</span> Forms
+                <a href="#tutorials" class="sidebar-link">
+                    <span class="sidebar-icon"><i class="fa-solid fa-book"></i></span>
+                    <span class="sidebar-text">Tutorials</span>
                 </a>
-                <a href="index.html#tutorials" class="sidebar-link">
-                    <span class="sidebar-icon">📚</span> Tutorials
+                <a href="member.html" class="sidebar-link">
+                    <span class="sidebar-icon"><i class="fa-solid fa-users"></i></span>
+                    <span class="sidebar-text">Member</span>
+                </a>
+                <a href="form.html" class="sidebar-link">
+                    <span class="sidebar-icon"><i class="fa-solid fa-file-signature"></i></span>
+                    <span class="sidebar-text">Member Form</span>
                 </a>
             </nav>
-            <div class="sidebar-footer">
-                <a href="index.html" class="sidebar-link logout-btn" id="sidebar-logout-btn">
-                    <span class="sidebar-icon">🚪</span> Logout
-                </a>
+
+            <div class="sidebar-user">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://picsum.photos/seed/user-avatar/40/40.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-level">Intermediate Quilter</span>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="index.html" class="sidebar-link logout-btn" id="logout-btn">
+                        <span class="sidebar-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                        <span class="sidebar-text">Logout</span>
+                    </a>
+
+
+                </nav>
             </div>
         </aside>
 
-        <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
         <!-- Main Dashboard Content -->
-        <div class="dashboard-main-content">
-            <!-- Mobile Top Nav -->
-            <div class="mobile-top-bar">
+        <main class="dashboard-main">
+            <div class="container-fluid">
+                <!-- Dashboard Header -->
+                <section class="dashboard-hero">
+                    <div class="welcome-content">
+                        <h1>Welcome back, <span id="welcome-name">John</span>! 👋</h1>
+                        <p>Ready to continue your quilting journey? Here's what's happening with your projects.</p>
 
-                <div class="mobile-logo">
-                    <h1>Free Quilt</h1>
-                </div>
-            </div>
-
-            <!-- Main Dashboard Content -->
-            <main class="dashboard-main">
-                <div class="container">
-                    <!-- Dashboard Header -->
-                    <section class="dashboard-hero">
-                        <div class="welcome-content">
-                            <h1>Welcome back, <span id="welcome-name">John</span>! 👋</h1>
-                            <p>Ready to continue your quilting journey? Here's what's happening with your projects.</p>
+                    </div>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Patterns Downloaded</div>
                         </div>
-                        <div class="quick-stats">
-                            <div class="stat-card">
-                                <div class="stat-number">12</div>
-                                <div class="stat-label">Patterns Downloaded</div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Favorites</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Days Streak</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dashboard Content Grid -->
+                <div class="dashboard-grid">
+                    <!-- Recent Activity -->
+                    <section class="dashboard-section recent-activity">
+                        <div class="section-header">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">📥</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Downloaded "Dresden Delight Quilt"</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-number">3</div>
-                                <div class="stat-label">Active Projects</div>
+                            <div class="activity-item">
+                                <div class="activity-icon">⭐</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Added "Tetris Tumble Quilt" to favorites</div>
+                                    <div class="activity-time">1 day ago</div>
+                                </div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-number">8</div>
-                                <div class="stat-label">Favorites</div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📝</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Updated notes for "Mini Charmer Table Runner"</div>
+                                    <div class="activity-time">3 days ago</div>
+                                </div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-number">24</div>
-                                <div class="stat-label">Days Streak</div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🎯</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Completed "Flying Geese Frenzy Quilt"</div>
+                                    <div class="activity-time">1 week ago</div>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Dashboard Content Grid -->
-                    <div class="dashboard-grid">
-                        <!-- Recent Activity -->
-                        <section class="dashboard-section recent-activity">
-                            <div class="section-header">
-                                <h2>Recent Activity</h2>
-                                <a href="#" class="view-all">View All</a>
-                            </div>
-                            <div class="activity-list">
-                                <div class="activity-item">
-                                    <div class="activity-icon">📥</div>
-                                    <div class="activity-content">
-                                        <div class="activity-title">Downloaded "Dresden Delight Quilt"</div>
-                                        <div class="activity-time">2 hours ago</div>
-                                    </div>
-                                </div>
-                                <div class="activity-item">
-                                    <div class="activity-icon">⭐</div>
-                                    <div class="activity-content">
-                                        <div class="activity-title">Added "Tetris Tumble Quilt" to favorites</div>
-                                        <div class="activity-time">1 day ago</div>
-                                    </div>
-                                </div>
-                                <div class="activity-item">
-                                    <div class="activity-icon">📝</div>
-                                    <div class="activity-content">
-                                        <div class="activity-title">Updated notes for "Mini Charmer Table Runner"</div>
-                                        <div class="activity-time">3 days ago</div>
-                                    </div>
-                                </div>
-                                <div class="activity-item">
-                                    <div class="activity-icon">🎯</div>
-                                    <div class="activity-content">
-                                        <div class="activity-title">Completed "Flying Geese Frenzy Quilt"</div>
-                                        <div class="activity-time">1 week ago</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Current Projects -->
-                        <section class="dashboard-section current-projects">
-                            <div class="section-header">
-                                <h2>Current Projects</h2>
-                                <a href="#" class="add-project">+ Add Project</a>
-                            </div>
-                            <div class="projects-grid">
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                            alt="Dresden Delight Quilt">
-                                        <div class="project-progress">75%</div>
-                                    </div>
-                                    <div class="project-content">
-                                        <h3>Dresden Delight Quilt</h3>
-                                        <p>Started: Jan 15, 2026</p>
-                                        <div class="project-status">
-                                            <span class="status-badge in-progress">In Progress</span>
-                                            <span class="project-due">Due: Feb 1</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150434/Mini-Charmer-Table-Runner-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                            alt="Mini Charmer Table Runner">
-                                        <div class="project-progress">30%</div>
-                                    </div>
-                                    <div class="project-content">
-                                        <h3>Mini Charmer Table Runner</h3>
-                                        <p>Started: Jan 20, 2026</p>
-                                        <div class="project-status">
-                                            <span class="status-badge in-progress">In Progress</span>
-                                            <span class="project-due">Due: Feb 5</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                            alt="Tetris Tumble Quilt">
-                                        <div class="project-progress">10%</div>
-                                    </div>
-                                    <div class="project-content">
-                                        <h3>Tetris Tumble Quilt</h3>
-                                        <p>Started: Jan 22, 2026</p>
-                                        <div class="project-status">
-                                            <span class="status-badge planning">Planning</span>
-                                            <span class="project-due">Due: Feb 15</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Favorite Patterns -->
-                        <section class="dashboard-section favorite-patterns">
-                            <div class="section-header">
-                                <h2>Favorite Patterns</h2>
-                                <a href="#" class="view-all">View All</a>
-                            </div>
-                            <div class="favorites-grid">
-                                <div class="favorite-item">
-                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                        alt="Tetris Tumble Quilt">
-                                    <div class="favorite-info">
-                                        <h4>Tetris Tumble Quilt</h4>
-                                        <span class="difficulty intermediate">Intermediate</span>
-                                    </div>
-                                    <button class="favorite-btn active">⭐</button>
-                                </div>
-                                <div class="favorite-item">
+                    <!-- Current Projects -->
+                    <section class="dashboard-section current-projects">
+                        <div class="section-header">
+                            <h2>Current Projects</h2>
+                            <a href="#" class="add-project">+ Add Project</a>
+                        </div>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-image">
                                     <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
                                         alt="Dresden Delight Quilt">
-                                    <div class="favorite-info">
-                                        <h4>Dresden Delight Quilt</h4>
-                                        <span class="difficulty intermediate">Intermediate</span>
-                                    </div>
-                                    <button class="favorite-btn active">⭐</button>
+                                    <div class="project-progress">75%</div>
                                 </div>
-                                <div class="favorite-item">
-                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150439/Modern-Angle-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                        alt="Modern Angle Quilt">
-                                    <div class="favorite-info">
-                                        <h4>Modern Angle Quilt</h4>
-                                        <span class="difficulty advanced">Advanced</span>
+                                <div class="project-content">
+                                    <h3>Dresden Delight Quilt</h3>
+                                    <p>Started: Jan 15, 2024</p>
+                                    <div class="project-status">
+                                        <span class="status-badge in-progress">In Progress</span>
+                                        <span class="project-due">Due: Feb 1</span>
                                     </div>
-                                    <button class="favorite-btn active">⭐</button>
-                                </div>
-                                <div class="favorite-item">
-                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150358/Jelly-Roll-Jumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
-                                        alt="Jelly Roll Jumble Quilt">
-                                    <div class="favorite-info">
-                                        <h4>Jelly Roll Jumble Quilt</h4>
-                                        <span class="difficulty beginner">Beginner</span>
-                                    </div>
-                                    <button class="favorite-btn active">⭐</button>
                                 </div>
                             </div>
-                        </section>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150434/Mini-Charmer-Table-Runner-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Mini Charmer Table Runner">
+                                    <div class="project-progress">30%</div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Mini Charmer Table Runner</h3>
+                                    <p>Started: Jan 20, 2024</p>
+                                    <div class="project-status">
+                                        <span class="status-badge in-progress">In Progress</span>
+                                        <span class="project-due">Due: Feb 5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                        alt="Tetris Tumble Quilt">
+                                    <div class="project-progress">10%</div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Tetris Tumble Quilt</h3>
+                                    <p>Started: Jan 22, 2024</p>
+                                    <div class="project-status">
+                                        <span class="status-badge planning">Planning</span>
+                                        <span class="project-due">Due: Feb 15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-                        <!-- Quick Actions -->
-                        <section class="dashboard-section quick-actions">
-                            <div class="section-header">
-                                <h2>Quick Actions</h2>
+                    <!-- Favorite Patterns -->
+                    <section class="dashboard-section favorite-patterns">
+                        <div class="section-header">
+                            <h2>Favorite Patterns</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="favorites-grid">
+                            <div class="favorite-item">
+                                <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150531/Tetris-Tumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                    alt="Tetris Tumble Quilt">
+                                <div class="favorite-info">
+                                    <h4>Tetris Tumble Quilt</h4>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <button class="favorite-btn active">⭐</button>
                             </div>
-                            <div class="actions-grid">
-                                <a href="index.html#patterns" class="action-card">
-                                    <div class="action-icon">🔍</div>
-                                    <h3>Browse Patterns</h3>
-                                    <p>Discover new quilt patterns</p>
-                                </a>
-                                <a href="#tutorials" class="action-card">
-                                    <div class="action-icon">📚</div>
-                                    <h3>Watch Tutorials</h3>
-                                    <p>Learn new techniques</p>
-                                </a>
-                                <a href="#" class="action-card">
-                                    <div class="action-icon">📊</div>
-                                    <h3>Progress Report</h3>
-                                    <p>View your quilting stats</p>
-                                </a>
-                                <a href="#" class="action-card">
-                                    <div class="action-icon">👥</div>
-                                    <h3>Community</h3>
-                                    <p>Connect with other quilters</p>
-                                </a>
+                            <div class="favorite-item">
+                                <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150216/Dresden-Delight-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                    alt="Dresden Delight Quilt">
+                                <div class="favorite-info">
+                                    <h4>Dresden Delight Quilt</h4>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <button class="favorite-btn active">⭐</button>
                             </div>
-                        </section>
+                            <div class="favorite-item">
+                                <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150439/Modern-Angle-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                    alt="Modern Angle Quilt">
+                                <div class="favorite-info">
+                                    <h4>Modern Angle Quilt</h4>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <button class="favorite-btn active">⭐</button>
+                            </div>
+                            <div class="favorite-item">
+                                <img src="https://d2culxnxbccemt.cloudfront.net/quilt/content/uploads/2022/09/22150358/Jelly-Roll-Jumble-Quilt-NQC_TitleCards_16x9_titlecard_notext.jpg"
+                                    alt="Jelly Roll Jumble Quilt">
+                                <div class="favorite-info">
+                                    <h4>Jelly Roll Jumble Quilt</h4>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <button class="favorite-btn active">⭐</button>
+                            </div>
+                        </div>
+                    </section>
 
-                        <!-- Upcoming Events -->
-                        <section class="dashboard-section upcoming-events">
-                            <div class="section-header">
-                                <h2>Upcoming Events</h2>
-                                <a href="#" class="view-all">View Calendar</a>
+                    <!-- Quick Actions -->
+                    <section class="dashboard-section quick-actions">
+                        <div class="section-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        <div class="actions-grid">
+                            <a href="index.html#patterns" class="action-card">
+                                <div class="action-icon">🔍</div>
+                                <h3>Browse Patterns</h3>
+                                <p>Discover new quilt patterns</p>
+                            </a>
+                            <a href="#tutorials" class="action-card">
+                                <div class="action-icon">📚</div>
+                                <h3>Watch Tutorials</h3>
+                                <p>Learn new techniques</p>
+                            </a>
+                            <a href="#" class="action-card">
+                                <div class="action-icon">📊</div>
+                                <h3>Progress Report</h3>
+                                <p>View your quilting stats</p>
+                            </a>
+                            <a href="#" class="action-card">
+                                <div class="action-icon">👥</div>
+                                <h3>Community</h3>
+                                <p>Connect with other quilters</p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Events -->
+                    <section class="dashboard-section upcoming-events">
+                        <div class="section-header">
+                            <h2>Upcoming Events</h2>
+                            <a href="#" class="view-all">View Calendar</a>
+                        </div>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">28</div>
+                                    <div class="date-month">JAN</div>
+                                </div>
+                                <div class="event-content">
+                                    <h4>Virtual Quilt Along</h4>
+                                    <p>Join our monthly quilt along session</p>
+                                    <div class="event-time">2:00 PM - 4:00 PM EST</div>
+                                </div>
+                                <button class="event-btn">Join</button>
                             </div>
-                            <div class="events-list">
-                                <div class="event-item">
-                                    <div class="event-date">
-                                        <div class="date-day">28</div>
-                                        <div class="date-month">JAN</div>
-                                    </div>
-                                    <div class="event-content">
-                                        <h4>Virtual Quilt Along</h4>
-                                        <p>Join our monthly quilt along session</p>
-                                        <div class="event-time">2:00 PM - 4:00 PM EST</div>
-                                    </div>
-                                    <button class="event-btn">Join</button>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">05</div>
+                                    <div class="date-month">FEB</div>
                                 </div>
-                                <div class="event-item">
-                                    <div class="event-date">
-                                        <div class="date-day">05</div>
-                                        <div class="date-month">FEB</div>
-                                    </div>
-                                    <div class="event-content">
-                                        <h4>Beginner Workshop</h4>
-                                        <p>Learn basic quilting techniques</p>
-                                        <div class="event-time">10:00 AM - 12:00 PM EST</div>
-                                    </div>
-                                    <button class="event-btn">Register</button>
+                                <div class="event-content">
+                                    <h4>Beginner Workshop</h4>
+                                    <p>Learn basic quilting techniques</p>
+                                    <div class="event-time">10:00 AM - 12:00 PM EST</div>
                                 </div>
-                                <div class="event-item">
-                                    <div class="event-date">
-                                        <div class="date-day">12</div>
-                                        <div class="date-month">FEB</div>
-                                    </div>
-                                    <div class="event-content">
-                                        <h4>Pattern Release Day</h4>
-                                        <p>New exclusive patterns for members</p>
-                                        <div class="event-time">All Day</div>
-                                    </div>
-                                    <button class="event-btn">Remind Me</button>
-                                </div>
+                                <button class="event-btn">Register</button>
                             </div>
-                        </section>
-                    </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">12</div>
+                                    <div class="date-month">FEB</div>
+                                </div>
+                                <div class="event-content">
+                                    <h4>Pattern Release Day</h4>
+                                    <p>New exclusive patterns for members</p>
+                                    <div class="event-time">All Day</div>
+                                </div>
+                                <button class="event-btn">Remind Me</button>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </main>
+        </main>
+    </div>
 
-        </div> <!-- End of .dashboard-main-content -->
-    </div> <!-- End of .dashboard-wrapper -->
+
 
     <!-- JavaScript -->
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
     <script src="js/dashboard.js"></script>
-    <!-- Dashboard initialized in dashboard.js -->
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function () {
+            Dashboard.init();
+        });
+    </script>
 </body>
 
 </html>
