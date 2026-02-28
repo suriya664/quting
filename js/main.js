@@ -126,15 +126,18 @@ function setupAuthEventListeners() {
 function initMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mainMenu = document.getElementById('main-menu');
+    const navOverlay = document.getElementById('nav-overlay');
 
     if (mobileToggle && mainMenu) {
         mobileToggle.addEventListener('click', function () {
             mainMenu.classList.toggle('active');
+            if (navOverlay) navOverlay.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
 
             // Animate hamburger menu
             const spans = mobileToggle.querySelectorAll('span');
             spans.forEach((span, index) => {
-                span.style.transform = mainMenu.classList.contains('active')
+                span.style.transform = mobileToggle.classList.contains('active')
                     ? getHamburgerTransform(index)
                     : '';
             });
@@ -143,11 +146,34 @@ function initMobileMenu() {
         // Close menu when clicking outside
         document.addEventListener('click', function (e) {
             if (!mobileToggle.contains(e.target) && !mainMenu.contains(e.target)) {
-                mainMenu.classList.remove('active');
-                const spans = mobileToggle.querySelectorAll('span');
-                spans.forEach(span => span.style.transform = '');
+                closeMobileMenu();
             }
         });
+
+        // Close menu when clicking on overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', function () {
+                closeMobileMenu();
+            });
+        }
+
+        // Close menu when clicking on navigation links
+        const navLinks = mainMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                closeMobileMenu();
+            });
+        });
+    }
+
+    function closeMobileMenu() {
+        if (mainMenu) mainMenu.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
+        if (mobileToggle) {
+            mobileToggle.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach(span => span.style.transform = '');
+        }
     }
 }
 
