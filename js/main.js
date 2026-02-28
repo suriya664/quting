@@ -39,10 +39,17 @@ function updateAuthUI() {
     const logoutBtns = document.querySelectorAll('#logout-btn, .logout-btn');
     const isDashboardPage = window.location.pathname.toLowerCase().includes('dashboard.html');
 
-    // Handle Logo and Dashboard links
-    document.querySelectorAll('.logo, .dashboard-btn').forEach(link => {
+    // Handle Dashboard link for logged in users
+    document.querySelectorAll('.dashboard-btn').forEach(link => {
         link.href = 'dashboard.html';
     });
+
+    // Failsafe: Ensure brand logo on Auth pages always points to Home
+    if (window.location.pathname.includes('login.html') || window.location.pathname.includes('register.html')) {
+        document.querySelectorAll('.logo').forEach(logo => {
+            logo.href = 'index.html';
+        });
+    }
 
     if (currentUser) {
         // User is logged in

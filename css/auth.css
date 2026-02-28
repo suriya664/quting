@@ -68,8 +68,7 @@
 
 .auth-container {
     width: 100%;
-    max-width: 500px;
-    /* Reduced for single card */
+    max-width: 650px;
 }
 
 .auth-form-wrapper {
@@ -119,7 +118,7 @@
 
 /* Auth Form */
 .auth-form {
-    max-width: 400px;
+    max-width: 550px;
     margin: 0 auto;
 }
 
@@ -198,7 +197,7 @@
 }
 
 .password-toggle:hover {
-    background-color: #f8f9fa;
+    background-color: var(--primary-bg);
 }
 
 .eye-icon {
@@ -220,7 +219,7 @@
     align-items: center;
     cursor: pointer;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -230,7 +229,7 @@
 .checkbox-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid #e1e8ed;
+    border: 2px solid var(--divider-color);
     border-radius: 4px;
     margin-right: 0.5rem;
     display: flex;
@@ -319,13 +318,13 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: #e1e8ed;
+    background: var(--divider-color);
 }
 
 .auth-divider span {
-    background: white;
+    background: var(--secondary-bg);
     padding: 0 1rem;
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -342,18 +341,18 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem;
-    border: 2px solid #e1e8ed;
+    border: 2px solid var(--divider-color);
     border-radius: 8px;
-    background: white;
-    color: #666;
+    background: var(--input-bg);
+    color: var(--text-main);
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .social-btn:hover {
-    border-color: #667eea;
-    background: #f8f9fa;
+    border-color: var(--accent-color);
+    background: var(--secondary-bg);
 }
 
 .social-icon {
@@ -478,21 +477,21 @@
 
 /* Success/Error States */
 .success-message {
-    background: #d4edda;
-    color: #155724;
+    background: var(--divider-color);
+    color: var(--accent-color);
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    border: 1px solid #c3e6cb;
+    border: 1px solid var(--accent-color);
 }
 
 .error-message {
-    background: #f8d7da;
-    color: #721c24;
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    border: 1px solid #f5c6cb;
+    border: 1px solid #e74c3c;
 }
 
 /* Loading States */

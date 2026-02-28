@@ -20,15 +20,15 @@
     --secondary-bg: #1e1e1e;
     --navbar-bg: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
     --auth-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    --text-main: #e0e0e0;
-    --text-muted: #aaaaaa;
+    --text-main: #f0f0f0;
+    --text-muted: #bbbbbb;
     --text-light: #ffffff;
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    --divider-color: #333333;
+    --divider-color: #444444;
     --accent-color: #3498db;
     --accent-hover: #5dade2;
     --footer-bg: #0f0f0f;
-    --input-bg: #2d2d2d;
+    --input-bg: #222222;
     --input-border: #444444;
 }
 
@@ -168,12 +168,12 @@ iframe {
 }
 
 .auth-btn.login-btn:hover .icon {
-    color: #2c3e50;
+    color: var(--navbar-bg);
 }
 
 .auth-btn.register-btn {
     background: white;
-    color: #2c3e50;
+    color: var(--navbar-bg);
 }
 
 .auth-btn.register-btn:hover {
@@ -315,7 +315,7 @@ iframe {
 
 .dropdown-divider {
     height: 1px;
-    background: #e1e8ed;
+    background: var(--divider-color);
     margin: 0.5rem 0;
 }
 
@@ -357,8 +357,8 @@ iframe {
 
 /* Secondary Navigation */
 .secondary-nav {
-    background-color: #ecf0f1;
-    border-bottom: 1px solid #bdc3c7;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--divider-color);
 }
 
 .secondary-menu {
@@ -369,7 +369,7 @@ iframe {
 }
 
 .secondary-link {
-    color: #2c3e50;
+    color: var(--text-main);
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -423,7 +423,7 @@ iframe {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .patterns-grid {
@@ -477,11 +477,11 @@ iframe {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .pattern-content p {
-    color: #7f8c8d;
+    color: var(--text-muted);
     margin-bottom: 1rem;
     font-size: 0.95rem;
 }
@@ -526,7 +526,7 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .about-section>p {
@@ -534,7 +534,7 @@ iframe {
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .features-grid {
@@ -563,7 +563,7 @@ iframe {
 }
 
 .feature-item p {
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Tutorials Section */
@@ -580,7 +580,7 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .tutorials-section>p {
@@ -588,7 +588,7 @@ iframe {
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .tutorials-grid {
@@ -618,7 +618,7 @@ iframe {
 }
 
 .tutorial-content p {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 1.5rem;
 }
 
@@ -629,7 +629,7 @@ iframe {
 
 .tutorial-content li {
     padding: 0.5rem 0;
-    color: #555;
+    color: var(--text-main);
     position: relative;
     padding-left: 1.5rem;
 }
@@ -686,14 +686,14 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .spotlight-section>p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .spotlight-grid {
@@ -714,11 +714,11 @@ iframe {
 
 .spotlight-card h3 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .spotlight-card p {
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 0.5rem;
 }
@@ -760,14 +760,14 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .gallery-section>p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .gallery-grid {
@@ -797,11 +797,11 @@ iframe {
 .gallery-card-content h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .gallery-card-content p {
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Events Section */
@@ -818,14 +818,14 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .events-section>p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .events-grid {
@@ -860,11 +860,11 @@ iframe {
 .event-card-content h3 {
     font-size: 1.15rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .event-card-content p {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
@@ -889,9 +889,10 @@ iframe {
 
 /* Resources Section */
 .resources-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: var(--primary-bg);
     padding: 3rem;
     border-radius: 8px;
+    border: 1px solid var(--divider-color);
     margin-bottom: 3rem;
 }
 
@@ -900,7 +901,7 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .resources-section>p {
@@ -908,7 +909,7 @@ iframe {
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .resources-grid {
@@ -942,11 +943,11 @@ iframe {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .resource-item p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -965,7 +966,7 @@ iframe {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: var(--text-main);
 }
 
 .faq-grid {
@@ -1098,7 +1099,7 @@ iframe {
         top: 100%;
         left: 0;
         right: 0;
-        background: #2c3e50;
+        background: var(--navbar-bg);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

@@ -3,8 +3,8 @@
 /* Pattern Categories */
 .pattern-category {
     display: inline-block;
-    background: #e8f4f8;
-    color: #2980b9;
+    background: var(--divider-color);
+    color: var(--accent-color);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -22,7 +22,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ddd;
+    background: var(--divider-color);
 }
 
 .difficulty-dot.filled {
@@ -68,7 +68,9 @@
 .search-input {
     width: 100%;
     padding: 1rem 1.5rem;
-    border: 2px solid #ecf0f1;
+    border: 2px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-main);
     border-radius: 25px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
@@ -177,7 +179,7 @@
 
 /* Loading Skeleton */
 .skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--primary-bg) 25%, var(--divider-color) 50%, var(--primary-bg) 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
 }
@@ -227,10 +229,11 @@
 
 /* Materials List */
 .materials-list {
-    background: #e8f4f8;
+    background: var(--secondary-bg);
     padding: 1.5rem;
     border-radius: 8px;
     margin: 2rem 0;
+    border: 1px solid var(--divider-color);
 }
 
 .materials-list h3 {
@@ -245,7 +248,7 @@
 
 .materials-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #d4e6f1;
+    border-bottom: 1px solid var(--divider-color);
 }
 
 .materials-list li:last-child {

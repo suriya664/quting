@@ -558,9 +558,9 @@ class Dashboard {
 }
 
 // Initialize dashboard when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    Dashboard.init();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     Dashboard.init();
+// });
 
 // Add keyboard shortcuts
 document.addEventListener('keydown', (e) => {
