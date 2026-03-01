@@ -64,6 +64,15 @@ iframe {
     height: auto;
 }
 
+/* Visibility Classes */
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: flex !important;
+}
+
 /* Header Styles */
 .main-header {
     background: var(--navbar-bg);
@@ -1091,6 +1100,14 @@ iframe {
         display: none;
     }
 
+    .mobile-only {
+        display: block !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
     #main-menu.active {
         display: flex !important;
         flex-direction: column;
@@ -1134,13 +1151,12 @@ iframe {
     }
 
     #main-menu .nav-icons {
-        margin-top: auto;
-        padding-top: 2rem;
+        margin-top: 1rem;
+        padding-top: 1.5rem;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        justify-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
         border-top: 1px solid var(--divider-color);
     }
 
