@@ -44,15 +44,24 @@
 }
 
 .auth-link {
-    color: #ffd700;
+    color: #000000 !important;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.3s ease;
 }
 
 .auth-link:hover {
-    color: #fff;
+    color: #333333 !important;
     text-decoration: underline;
+}
+
+/* Ensure proper contrast in light mode */
+.light-theme .auth-link {
+    color: #2980b9;
+}
+
+.light-theme .auth-link:hover {
+    color: #1f4e79;
 }
 
 /* Auth Main */
@@ -112,7 +121,7 @@
 }
 
 .auth-header-content p {
-    color: var(--text-muted);
+    color: #000000 !important;
     font-size: 1.1rem;
 }
 
