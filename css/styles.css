@@ -743,7 +743,7 @@ iframe {
     text-decoration: none;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(135deg, #16a085, #138d75);
+    background: linear-gradient(135deg, #3498db, #2980b9);
     transition: all 0.3s ease;
     min-height: 42px;
     visibility: visible;
@@ -752,7 +752,7 @@ iframe {
 
 .spotlight-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(22, 160, 133, 0.3);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
 
 /* Inspiration Gallery Section */
@@ -885,7 +885,7 @@ iframe {
     margin-top: auto;
     text-decoration: none;
     color: #fff;
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    background: linear-gradient(135deg, #3498db, #2980b9);
     border-radius: 999px;
     padding: 0.65rem 1.2rem;
     font-weight: 600;
@@ -938,7 +938,7 @@ iframe {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: var(--accent-color);
+    color: #3498db;
     text-align: center;
 }
 
@@ -988,7 +988,7 @@ iframe {
     background: var(--primary-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid #9b59b6;
+    border-left: 4px solid var(--accent-color);
     transition: transform 0.3s ease;
 }
 
@@ -1000,7 +1000,7 @@ iframe {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #9b59b6;
+    color: var(--accent-color);
 }
 
 .faq-item p {
