@@ -12,7 +12,7 @@
 
 /* Auth Header */
 .auth-header {
-    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -154,8 +154,8 @@
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
 }
 
 .form-group input.error,
@@ -239,8 +239,8 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked+.checkbox-custom {
-    background-color: #667eea;
-    border-color: #667eea;
+    background-color: #3182ce;
+    border-color: #3182ce;
 }
 
 .checkbox-label input[type="checkbox"]:checked+.checkbox-custom::after {
@@ -251,7 +251,7 @@
 }
 
 .forgot-password {
-    color: #667eea;
+    color: #3182ce;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -277,13 +277,13 @@
 }
 
 .auth-btn.primary {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #2c5282, #2b6cb0);
     color: white;
 }
 
 .auth-btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
 }
 
 .auth-btn:disabled {

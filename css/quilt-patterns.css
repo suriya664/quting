@@ -54,9 +54,9 @@
 }
 
 .filter-btn.active {
-    background: #3498db;
+    background: #3182ce;
     color: white;
-    border-color: #2980b9;
+    border-color: #2b6cb0;
 }
 
 /* Pattern Search */
@@ -78,7 +78,7 @@
 
 .search-input:focus {
     outline: none;
-    border-color: #3498db;
+    border-color: #3182ce;
 }
 
 /* Pattern Tags */
@@ -145,7 +145,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #f39c12, #e67e22);
+    background: linear-gradient(135deg, #2c5282, #2b6cb0);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -169,7 +169,7 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: #27ae60;
+    background: #3182ce;
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
@@ -237,7 +237,7 @@
 }
 
 .materials-list h3 {
-    color: #2980b9;
+    color: #2b6cb0;
     margin-bottom: 1rem;
 }
 
