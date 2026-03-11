@@ -1,16 +1,16 @@
 :root {
     --primary-bg: #fafafa;
     --secondary-bg: #ffffff;
-    --navbar-bg: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
-    --auth-gradient: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+    --navbar-bg: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --auth-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --text-main: #333333;
     --text-muted: #666666;
     --text-light: #ffffff;
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --divider-color: #e1e8ed;
-    --accent-color: #3182ce;
-    --accent-hover: #2b6cb0;
-    --footer-bg: #1a365d;
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+    --footer-bg: #2c3e50;
     --input-bg: #ffffff;
     --input-border: #e1e8ed;
 }
@@ -25,7 +25,7 @@
     --text-light: #ffffff;
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     --divider-color: #444444;
-    --accent-color: #3182ce;
+    --accent-color: #3498db;
     --accent-hover: #5dade2;
     --footer-bg: #0f0f0f;
     --input-bg: #222222;
@@ -182,7 +182,7 @@ iframe {
 
 .auth-btn.register-btn {
     background: white;
-    color: #1a365d;
+    color: var(--navbar-bg);
 }
 
 .auth-btn.register-btn:hover {
@@ -389,7 +389,7 @@ iframe {
 
 .secondary-link:hover,
 .secondary-link.active {
-    background-color: #3182ce;
+    background-color: #3498db;
     color: white;
 }
 
@@ -403,7 +403,7 @@ iframe {
 .hero-section {
     text-align: center;
     padding: 3rem 0;
-    background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     margin-bottom: 3rem;
     border-radius: 8px;
@@ -499,7 +499,7 @@ iframe {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
@@ -516,7 +516,7 @@ iframe {
 }
 
 .pattern-download-btn:hover {
-    background: linear-gradient(135deg, #2b6cb0, #21618c);
+    background: linear-gradient(135deg, #2980b9, #21618c);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
@@ -568,7 +568,7 @@ iframe {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #3182ce;
+    color: #3498db;
 }
 
 .feature-item p {
@@ -610,7 +610,7 @@ iframe {
     background: var(--primary-bg);
     padding: 2rem;
     border-radius: 8px;
-    border-left: 4px solid #3182ce;
+    border-left: 4px solid #3498db;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -623,7 +623,7 @@ iframe {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #3182ce;
+    color: #3498db;
 }
 
 .tutorial-content p {
@@ -647,7 +647,7 @@ iframe {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #2b6cb0;
+    color: #27ae60;
     font-weight: bold;
 }
 
@@ -661,7 +661,7 @@ iframe {
     justify-content: center;
     align-self: center;
     margin-top: auto;
-    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    background: linear-gradient(135deg, #3498db, #2980b9);
     border-radius: 25px;
     padding: 0.7rem 1.2rem;
     min-height: 42px;
@@ -670,7 +670,7 @@ iframe {
 }
 
 .tutorial-link:hover {
-    background: linear-gradient(135deg, #2b6cb0, #21618c);
+    background: linear-gradient(135deg, #2980b9, #21618c);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
@@ -743,7 +743,7 @@ iframe {
     text-decoration: none;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    background: linear-gradient(135deg, #16a085, #138d75);
     transition: all 0.3s ease;
     min-height: 42px;
     visibility: visible;
@@ -752,7 +752,7 @@ iframe {
 
 .spotlight-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+    box-shadow: 0 4px 10px rgba(22, 160, 133, 0.3);
 }
 
 /* Inspiration Gallery Section */
@@ -885,7 +885,7 @@ iframe {
     margin-top: auto;
     text-decoration: none;
     color: #fff;
-    background: linear-gradient(135deg, #2b6cb0, #1a365d);
+    background: linear-gradient(135deg, #e67e22, #d35400);
     border-radius: 999px;
     padding: 0.65rem 1.2rem;
     font-weight: 600;
@@ -938,7 +938,7 @@ iframe {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: #2b6cb0;
+    color: #e67e22;
     text-align: center;
 }
 
@@ -988,7 +988,7 @@ iframe {
     background: var(--primary-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid #3182ce;
+    border-left: 4px solid #9b59b6;
     transition: transform 0.3s ease;
 }
 
@@ -1000,7 +1000,7 @@ iframe {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #3182ce;
+    color: #9b59b6;
 }
 
 .faq-item p {
@@ -1349,7 +1349,7 @@ img[loading="lazy"]:not([src=""]) {
         display: inline-flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        background: linear-gradient(135deg, #3182ce, #2b6cb0) !important;
+        background: linear-gradient(135deg, #3498db, #2980b9) !important;
         color: #fff !important;
         border: 0 !important;
     }
