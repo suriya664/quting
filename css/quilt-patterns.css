@@ -26,7 +26,7 @@
 }
 
 .difficulty-dot.filled {
-    background: #f39c12;
+    background: var(--accent-color);
 }
 
 /* Pattern Grid Filters */
@@ -54,9 +54,9 @@
 }
 
 .filter-btn.active {
-    background: #3182ce;
+    background: #3498db;
     color: white;
-    border-color: #2b6cb0;
+    border-color: #2980b9;
 }
 
 /* Pattern Search */
@@ -78,7 +78,7 @@
 
 .search-input:focus {
     outline: none;
-    border-color: #3182ce;
+    border-color: #3498db;
 }
 
 /* Pattern Tags */
@@ -145,13 +145,13 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #2c5282, #2b6cb0);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    box-shadow: 0 2px 10px rgba(243, 156, 18, 0.3);
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
     z-index: 10;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .pattern-card.featured {
-    border: 2px solid #f39c12;
+    border: 2px solid var(--accent-color);
 }
 
 .pattern-card.new .pattern-image::after {
@@ -169,7 +169,7 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: #3182ce;
+    background: #27ae60;
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
@@ -237,7 +237,7 @@
 }
 
 .materials-list h3 {
-    color: #2b6cb0;
+    color: #2980b9;
     margin-bottom: 1rem;
 }
 

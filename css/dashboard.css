@@ -218,7 +218,7 @@
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #2c5282, #2b6cb0);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     padding: 1.5rem;
     border-radius: 8px;
@@ -260,7 +260,7 @@
 
 .view-all,
 .add-project {
-    color: #3182ce;
+    color: #667eea;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -348,7 +348,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(49, 130, 206, 0.9);
+    background: rgba(102, 126, 234, 0.9);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -599,7 +599,7 @@
     border-radius: 12px;
     text-align: center;
     min-width: 65px;
-    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
 }
 
 .date-day {
@@ -655,7 +655,7 @@
 
 .event-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 /* Mobile Toggle Style for Sidebar */
@@ -671,7 +671,7 @@
     padding: 0.6rem 0.8rem;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -869,5 +869,5 @@
 }
 
 .notification.info {
-    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    background: linear-gradient(135deg, #3498db, #2980b9);
 }

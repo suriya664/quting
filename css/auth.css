@@ -12,7 +12,7 @@
 
 /* Auth Header */
 .auth-header {
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -44,24 +44,15 @@
 }
 
 .auth-link {
-    color: #000000 !important;
+    color: #ffd700;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .auth-link:hover {
-    color: #333333 !important;
+    color: #fff;
     text-decoration: underline;
-}
-
-/* Ensure proper contrast in light mode */
-.light-theme .auth-link {
-    color: #2980b9;
-}
-
-.light-theme .auth-link:hover {
-    color: #1f4e79;
 }
 
 /* Auth Main */
@@ -121,7 +112,7 @@
 }
 
 .auth-header-content p {
-    color: #000000 !important;
+    color: var(--text-muted);
     font-size: 1.1rem;
 }
 
@@ -163,8 +154,8 @@
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #3182ce;
-    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .form-group input.error,
@@ -248,8 +239,8 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked+.checkbox-custom {
-    background-color: #3182ce;
-    border-color: #3182ce;
+    background-color: #667eea;
+    border-color: #667eea;
 }
 
 .checkbox-label input[type="checkbox"]:checked+.checkbox-custom::after {
@@ -260,7 +251,7 @@
 }
 
 .forgot-password {
-    color: #3182ce;
+    color: #667eea;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -286,13 +277,13 @@
 }
 
 .auth-btn.primary {
-    background: linear-gradient(135deg, #2c5282, #2b6cb0);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
 }
 
 .auth-btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .auth-btn:disabled {
