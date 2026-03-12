@@ -214,35 +214,43 @@
 .quick-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: var(--navbar-bg);
     color: white;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     min-width: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
 }
 
 .stat-number {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
 
 .stat-label {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     opacity: 0.9;
 }
 
 /* Dashboard Sections */
 .dashboard-section {
     background: var(--secondary-bg);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 2rem;
     box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    border: 1px solid var(--divider-color);
 }
 
 .section-header {
@@ -260,7 +268,7 @@
 
 .view-all,
 .add-project {
-    color: #3498db;
+    color: #3182ce;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -268,7 +276,7 @@
 
 .view-all:hover,
 .add-project:hover {
-    color: #2980b9;
+    color: #5a67d8;
     text-decoration: underline;
 }
 
@@ -348,7 +356,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(52, 152, 219, 0.9);
+    background: rgba(49, 130, 206, 0.9);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -599,7 +607,7 @@
     border-radius: 12px;
     text-align: center;
     min-width: 65px;
-    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
 }
 
 .date-day {
@@ -655,7 +663,7 @@
 
 .event-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
 }
 
 /* Mobile Toggle Style for Sidebar */
@@ -671,7 +679,7 @@
     padding: 0.6rem 0.8rem;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -869,5 +877,5 @@
 }
 
 .notification.info {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #3182ce, #2b6cb0);
 }
