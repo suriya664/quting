@@ -44,24 +44,24 @@
 }
 
 .auth-link {
-    color: #000000 !important;
+    color: var(--accent-color) !important;
     text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .auth-link:hover {
-    color: #333333 !important;
+    color: var(--accent-hover) !important;
     text-decoration: underline;
 }
 
-/* Ensure proper contrast in light mode */
-.light-theme .auth-link {
-    color: #2980b9;
+/* Dark mode overrides */
+.dark-theme .auth-link {
+    color: var(--accent-color) !important;
 }
 
-.light-theme .auth-link:hover {
-    color: #1f4e79;
+.dark-theme .auth-link:hover {
+    color: var(--accent-hover) !important;
 }
 
 /* Auth Main */
@@ -171,10 +171,10 @@
 }
 
 .auth-footer-prompt {
-    margin-top: 2rem;
-    border-top: 1px solid var(--divider-color);
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
     text-align: center;
+    border-top: 1px solid var(--divider-color);
 }
 
 .auth-footer-prompt p {
@@ -388,9 +388,11 @@
 
 .auth-divider span {
     background: var(--secondary-bg);
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     color: var(--text-muted);
     font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Social Login */
