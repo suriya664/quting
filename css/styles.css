@@ -177,7 +177,7 @@ iframe {
 }
 
 .auth-btn.login-btn:hover .icon {
-    color: var(--navbar-bg);
+    color: #2c3e50;
 }
 
 .auth-btn.register-btn {
@@ -1163,7 +1163,13 @@ iframe {
     margin-bottom: 2rem;
 }
 
-.footer-section h3,
+.footer-section h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ecf0f1;
+}
+
 .footer-section h4 {
     margin-bottom: 1rem;
     color: #ecf0f1;

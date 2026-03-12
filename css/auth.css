@@ -82,15 +82,23 @@
 
 .auth-form-wrapper {
     background: var(--secondary-bg);
-    border-radius: 16px;
+    border-radius: 28px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
     width: 100%;
+    border: 1px solid var(--divider-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
 }
 
 /* Auth Form Card */
 .auth-form-card {
-    padding: 2rem;
+    padding: 3.5rem 3rem;
+    position: relative;
 }
 
 .auth-card-logo {
@@ -104,8 +112,13 @@
 }
 
 .auth-card-logo h1 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
 .auth-header-content {
@@ -131,16 +144,30 @@
 
 .auth-theme-toggle {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
 }
 
 .auth-theme-toggle .theme-btn {
-    background: none;
-    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--primary-bg);
+    border: 1px solid var(--divider-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: var(--text-main);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.auth-theme-toggle .theme-btn:hover {
+    background: var(--divider-color);
+    transform: scale(1.05);
 }
 
 .auth-footer-prompt {
