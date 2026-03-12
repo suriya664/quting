@@ -26,7 +26,6 @@ class Auth {
         this.setupPasswordToggle();
         this.setupPasswordConfirmation();
         this.setupSocialLogin();
-        this.setupUsernameValidation();
     }
 
     // Setup Login Form
@@ -55,7 +54,7 @@ class Auth {
     static async handleLogin(form) {
         const email = form.email.value.trim();
         const password = form.password.value;
-        const remember = form.remember.checked;
+        const remember = form.remember ? form.remember.checked : false;
 
         // Clear previous errors
         this.clearErrors(form);
@@ -105,15 +104,10 @@ class Auth {
 
     // Handle Register
     static async handleRegister(form) {
-        const firstName = form.firstName.value.trim();
-        const lastName = form.lastName.value.trim();
+        const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
-        const username = form.username.value.trim();
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
-        const skillLevel = form.skillLevel.value;
-        const newsletter = form.newsletter.checked;
-        const terms = form.terms.checked;
 
         // Clear previous errors
         this.clearErrors(form);
@@ -121,28 +115,13 @@ class Auth {
         // Validate
         let hasError = false;
 
-        if (!firstName) {
-            this.showError('firstName', 'First name is required');
-            hasError = true;
-        }
-
-        if (!lastName) {
-            this.showError('lastName', 'Last name is required');
+        if (!fullName) {
+            this.showError('fullName', 'Full name is required');
             hasError = true;
         }
 
         if (!this.validateEmail(email)) {
             this.showError('email', 'Please enter a valid email address');
-            hasError = true;
-        }
-
-        if (!this.validateUsername(username)) {
-            this.showError('username', 'Username must be 3-20 characters, letters and numbers only');
-            hasError = true;
-        }
-
-        if (this.users.find(u => u.username === username)) {
-            this.showError('username', 'Username is already taken');
             hasError = true;
         }
 
@@ -161,16 +140,6 @@ class Auth {
             hasError = true;
         }
 
-        if (!skillLevel) {
-            this.showError('skillLevel', 'Please select your skill level');
-            hasError = true;
-        }
-
-        if (!terms) {
-            this.showError('terms', 'You must agree to the terms and conditions');
-            hasError = true;
-        }
-
         if (hasError) return;
 
         // Show loading state
@@ -183,16 +152,14 @@ class Auth {
         // Create user
         const newUser = {
             id: Date.now(),
-            firstName,
-            lastName,
+            fullName,
             email,
-            username,
             password, // In real app, this would be hashed
-            skillLevel,
-            newsletter,
+            skillLevel: 'Beginner', // Default value
+            newsletter: false, // Default value
             createdAt: new Date().toISOString(),
             profile: {
-                avatar: `https://picsum.photos/seed/${username}/100/100.jpg`,
+                avatar: `https://picsum.photos/seed/${fullName}/100/100.jpg`,
                 bio: '',
                 location: '',
                 website: ''
