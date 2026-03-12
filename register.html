@@ -25,7 +25,7 @@
         <div class="container">
             <nav class="auth-nav">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration: none;">
+                    <a href="index.html" class="auth-logo-link">
                         <h1>Free Quilt</h1>
                     </a>
                 </div>
@@ -48,9 +48,8 @@
                                 <h1>Free Quilt</h1>
                             </a>
                         </div>
-                        <div class="auth-nav-actions" style="position: absolute; top: 1rem; right: 1rem;">
-                            <button id="theme-toggle" class="nav-icon-btn theme-btn"
-                                style="background: none; border: none; cursor: pointer; color: var(--text-main); font-size: 1.2rem;">
+                        <div class="auth-theme-toggle">
+                            <button id="theme-toggle" class="nav-icon-btn theme-btn" title="Toggle Theme">
                                 <i class="fas fa-moon"></i>
                             </button>
                         </div>
@@ -60,20 +59,11 @@
                         </div>
 
                         <form id="register-form" class="auth-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" required
-                                        placeholder="Enter your first name" autocomplete="given-name">
-                                    <span class="form-error" id="firstName-error"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" required
-                                        placeholder="Enter your last name" autocomplete="family-name">
-                                    <span class="form-error" id="lastName-error"></span>
-                                </div>
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required
+                                    placeholder="Enter your full name" autocomplete="name">
+                                <span class="form-error" id="fullName-error"></span>
                             </div>
 
                             <div class="form-group">
@@ -81,15 +71,6 @@
                                 <input type="email" id="email" name="email" required placeholder="Enter your email"
                                     autocomplete="email">
                                 <span class="form-error" id="email-error"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" id="username" name="username" required
-                                    placeholder="Choose a username" autocomplete="username">
-                                <span class="form-error" id="username-error"></span>
-                                <small class="form-help">Username must be 3-20 characters, letters and numbers
-                                    only</small>
                             </div>
 
                             <div class="form-group">
@@ -139,11 +120,8 @@
                         </form>
                     </div>
 
-                    <div class="auth-header-content"
-                        style="margin-top: 2rem; border-top: 1px solid var(--divider-color); padding-top: 1rem;">
-                        <p>Already have an account? <a href="login.html" class="auth-link"
-                                style="color: var(--accent-color);">Sign
-                                in</a></p>
+                    <div class="auth-footer-prompt">
+                        <p>Already have an account? <a href="login.html" class="auth-link">Sign in</a></p>
                     </div>
                 </div>
             </div>

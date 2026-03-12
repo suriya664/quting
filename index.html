@@ -40,8 +40,7 @@
                         <a href="#resources" class="nav-link">Resources</a>
                         <a href="#about" class="nav-link">About</a>
                         <a href="dashboard.html" class="nav-link mobile-only">Dashboard</a>
-                        <a href="member.html" class="nav-link mobile-only">Members</a>
-                        <a href="form.html" class="nav-link mobile-only">Join Us</a>
+
                         <a href="#community" class="nav-link mobile-only">Community</a>
                         <a href="#gallery" class="nav-link mobile-only">Gallery</a>
                         <a href="#events" class="nav-link mobile-only">Events</a>
@@ -54,18 +53,6 @@
                             </svg>
                         </a>
                         <div class="auth-links" id="auth-links">
-                            <a href="member.html" class="nav-icon-btn member-btn desktop-only" title="Member">
-                                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                </svg>
-                            </a>
-                            <a href="form.html" class="nav-icon-btn form-btn desktop-only" title="Member Form">
-                                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-                                </svg>
-                            </a>
                             <a href="login.html" class="auth-btn login-btn" title="Login">
                                 <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path
@@ -142,10 +129,120 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero-section">
-                <h1>Free Quilt</h1>
-                <p class="hero-description">With any creative hobby, you can never have too many new projects to try or
-                    too much inspiration. If you're in search of your next quilting project or just want to get
-                    inspired, you've come to the right place.</p>
+                <div class="hero-grid container">
+                    <div class="hero-text">
+                        <p class="hero-eyebrow">Free Quilt</p>
+                        <h1>With any creative hobby, you can never have too many new projects to try or too much
+                            inspiration.</h1>
+                        <p class="hero-description">If you're in search of your next quilting project or just want to
+                            get inspired, you've come to the right place.</p>
+
+                        <div class="hero-pillars">
+                            <div class="hero-pill">Premium Quilt Collections</div>
+                            <div class="hero-pill">Quilt Masters Showcase</div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-visual-card">
+                            <p class="hero-visual-title">Exclusive releases</p>
+                            <p class="hero-visual-copy">Handpicked masterpiece patterns from award-winning quilters —
+                                rich textures, bold designs, and step-by-step video guides included.</p>
+                            <ul class="hero-visual-list">
+                                <li>12 unique Heritage Rose block designs</li>
+                                <li>8 Modern Geometry variations with palette plans</li>
+                                <li>Fabric calculator and video walkthroughs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Premium Collections Section -->
+            <section class="premium-collections-section" id="premium-collections">
+                <div class="section-header">
+                    <span class="badge exclusive-badge">Exclusive</span>
+                    <h2>Premium Quilt Collections</h2>
+                    <p>Handpicked masterpiece patterns from award-winning quilters — rich textures, bold designs, and
+                        step-by-step video guides included.</p>
+                </div>
+                <div class="premium-card-group">
+                    <article class="premium-card premium-heritage">
+
+                        <h3>Heritage Rose Collection</h3>
+                        <p>A timeless floral masterpiece blending traditional rose blocks with contemporary color
+                            theory. Ideal for advanced quilters seeking an heirloom-quality project.</p>
+                        <ul>
+                            <li>12 unique block designs</li>
+                            <li>Full-color step-by-step guide</li>
+                            <li>Video tutorial included</li>
+                        </ul>
+                        <a href="member.html" class="premium-card-cta">Unlock Pattern</a>
+                    </article>
+                    <article class="premium-card premium-geometry">
+
+                        <h3>Modern Geometry Series</h3>
+                        <p>Bold geometric shapes meet vibrant color gradients in this contemporary collection. Perfect
+                            for quilters who love clean lines and dramatic visual impact.</p>
+                        <ul>
+                            <li>8 geometric pattern variations</li>
+                            <li>Color palette planning sheets</li>
+                            <li>Fabric calculator tool</li>
+                        </ul>
+                        <a href="member.html" class="premium-card-cta">Unlock Pattern</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Quilt Masters Showcase Section -->
+            <section class="masters-showcase-section" id="masters">
+                <div class="section-header">
+                    <span class="badge masters-badge">Community</span>
+                    <h2>Quilt Masters Showcase</h2>
+                    <p>Meet the talented artists behind our most-loved patterns. Learn from their journey, style, and
+                        signature techniques.</p>
+                </div>
+                <div class="masters-grid showcase-grid">
+                    <article class="master-card showcase-card">
+                        <div class="master-card-hero hero-heritage">
+                            <div class="master-avatar-wrap">
+                                <img src="images/eleanor-hayes.png" alt="Eleanor Hayes" loading="lazy">
+                            </div>
+                            <div class="master-card-meta">
+                                <h3>Eleanor Hayes</h3>
+                                <span>Traditional Patterns Expert</span>
+                            </div>
+                        </div>
+                        <div class="master-card-body">
+                            <p>25+ years of quilting experience. Eleanor specialises in Log Cabin and Dresden Plate
+                                designs with a bold modern color twist.</p>
+                            <div class="master-card-stats">
+                                <div><strong>142</strong><span>Patterns</span></div>
+                                <div><strong>9.8k</strong><span>Followers</span></div>
+                                <div><strong>4.9/5</strong><span>Rating</span></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="master-card showcase-card">
+                        <div class="master-card-hero hero-modern">
+                            <div class="master-avatar-wrap">
+                                <img src="images/mei-lin-chow.png" alt="Mei Lin Chow" loading="lazy">
+                            </div>
+                            <div class="master-card-meta">
+                                <h3>Mei Lin Chow</h3>
+                                <span>Modern Art Quilter</span>
+                            </div>
+                        </div>
+                        <div class="master-card-body">
+                            <p>Award-winning art quilter whose work hangs in three national galleries. She brings
+                                painterly precision to every hexagon and chevron design.</p>
+                            <div class="master-card-stats">
+                                <div><strong>218</strong><span>Patterns</span></div>
+                                <div><strong>22k</strong><span>Followers</span></div>
+                                <div><strong>5.0/5</strong><span>Rating</span></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </section>
 
             <!-- Patterns Grid -->
@@ -655,55 +752,70 @@
 
                 <div class="resources-grid">
                     <div class="resource-category">
-                        <h3>Essential Tools</h3>
-                        <div class="resource-items">
-                            <div class="resource-item">
-                                <h4>Cutting Tools</h4>
-                                <p>Rotary cutter, cutting mat, quilting ruler, scissors, and seam ripper.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Sewing Equipment</h4>
-                                <p>Sewing machine, various needle sizes, quality thread, and basting tools.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Marking & Measuring</h4>
-                                <p>Water-soluble markers, chalk pencils, measuring tapes, and square rulers.</p>
+                        <div class="resource-image-wrap">
+                            <img src="images/resource-tools.png" alt="Essential Quilting Tools">
+                        </div>
+                        <div class="resource-category-content">
+                            <h3>Essential Tools</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Cutting Tools</h4>
+                                    <p>Rotary cutter, cutting mat, quilting ruler, scissors, and seam ripper.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Sewing Equipment</h4>
+                                    <p>Sewing machine, various needle sizes, quality thread, and basting tools.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Marking & Measuring</h4>
+                                    <p>Water-soluble markers, chalk pencils, measuring tapes, and square rulers.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="resource-category">
-                        <h3>Fabric Selection</h3>
-                        <div class="resource-items">
-                            <div class="resource-item">
-                                <h4>Cotton Fabrics</h4>
-                                <p>100% cotton is ideal for quilting - learn about different weights and weaves.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Color Theory</h4>
-                                <p>Understanding color relationships, value, and contrast for stunning quilts.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Fabric Preparation</h4>
-                                <p>Pre-washing, pressing, and storing your fabric properly.</p>
+                        <div class="resource-image-wrap">
+                            <img src="images/resource-fabrics.png" alt="Quilting Fabrics">
+                        </div>
+                        <div class="resource-category-content">
+                            <h3>Fabric Selection</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Cotton Fabrics</h4>
+                                    <p>100% cotton is ideal for quilting - learn about different weights and weaves.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Color Theory</h4>
+                                    <p>Understanding color relationships, value, and contrast for stunning quilts.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Fabric Preparation</h4>
+                                    <p>Pre-washing, pressing, and storing your fabric properly.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="resource-category">
-                        <h3>Pattern Reading</h3>
-                        <div class="resource-items">
-                            <div class="resource-item">
-                                <h4>Understanding Symbols</h4>
-                                <p>Learn common quilting abbreviations, symbols, and terminology.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Yardage Calculations</h4>
-                                <p>How to calculate fabric requirements for any quilt size.</p>
-                            </div>
-                            <div class="resource-item">
-                                <h4>Modifying Patterns</h4>
-                                <p>Tips for adjusting patterns to different sizes and personal preferences.</p>
+                        <div class="resource-image-wrap">
+                            <img src="images/resource-patterns.png" alt="Quilt Patterns">
+                        </div>
+                        <div class="resource-category-content">
+                            <h3>Pattern Reading</h3>
+                            <div class="resource-items">
+                                <div class="resource-item">
+                                    <h4>Understanding Symbols</h4>
+                                    <p>Learn common quilting abbreviations, symbols, and terminology.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Yardage Calculations</h4>
+                                    <p>How to calculate fabric requirements for any quilt size.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Modifying Patterns</h4>
+                                    <p>Tips for adjusting patterns to different sizes and personal preferences.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -715,39 +827,69 @@
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <h3>What skill level are these patterns suitable for?</h3>
-                        <p>Our patterns range from beginner to advanced. Each pattern includes a difficulty rating and
-                            detailed instructions suitable for the specified skill level.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-skill.png" alt="Quilting Skill Levels">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>What skill level are these patterns suitable for?</h3>
+                            <p>Our patterns range from beginner to advanced. Each pattern includes a difficulty rating and
+                                detailed instructions suitable for the specified skill level.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>Can I sell quilts made from these patterns?</h3>
-                        <p>Most free patterns allow for personal use and small-scale selling. Always check the specific
-                            pattern's licensing terms before selling items made from the pattern.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-licensing.png" alt="Quilting Pattern Licensing">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>Can I sell quilts made from these patterns?</h3>
+                            <p>Most free patterns allow for personal use and small-scale selling. Always check the specific
+                                pattern's licensing terms before selling items made from the pattern.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>What fabric should I use for my first quilt?</h3>
-                        <p>We recommend 100% cotton quilting fabric for beginners. It's easy to work with, presses well,
-                            and creates durable quilts.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-fabric.png" alt="Quilting Fabric Selection">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>What fabric should I use for my first quilt?</h3>
+                            <p>We recommend 100% cotton quilting fabric for beginners. It's easy to work with, presses well,
+                                and creates durable quilts.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>How do I choose the right batting?</h3>
-                        <p>Consider your quilt's intended use. Cotton batting is traditional and breathable, while
-                            polyester provides more warmth and is lighter.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-batting.png" alt="Quilting Batting Types">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>How do I choose the right batting?</h3>
+                            <p>Consider your quilt's intended use. Cotton batting is traditional and breathable, while
+                                polyester provides more warmth and is lighter.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>What size should my quilt backing be?</h3>
-                        <p>Your backing should be 4-6 inches larger than your quilt top on all sides to allow for
-                            quilting and trimming.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-backing.png" alt="Quilt Backing Sizing">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>What size should my quilt backing be?</h3>
+                            <p>Your backing should be 4-6 inches larger than your quilt top on all sides to allow for
+                                quilting and trimming.</p>
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>How do I prevent fabric fraying?</h3>
-                        <p>Use sharp tools, handle fabric gently, and consider using fray check on edges that will
-                            receive heavy use.</p>
+                        <div class="faq-card-image">
+                            <img src="images/faq-finishing.png" alt="Quilt Finishing">
+                        </div>
+                        <div class="faq-item-content">
+                            <h3>How do I prevent fabric fraying?</h3>
+                            <p>Use sharp tools, handle fabric gently, and consider using fray check on edges that will
+                                receive heavy use.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -790,8 +932,9 @@
                         </a>
                         <a href="#" class="social-link" title="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                             </svg>
                         </a>
                         <a href="#" class="social-link" title="Pinterest">
