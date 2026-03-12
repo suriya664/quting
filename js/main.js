@@ -55,7 +55,8 @@ function updateAuthUI() {
         // User is logged in
         if (authLinks) authLinks.style.display = 'none';
         if (userMenu) userMenu.style.display = 'flex';
-        if (headerUserName) headerUserName.textContent = `${currentUser.firstName} ${currentUser.lastName}`;
+        const headerUserNameElem = document.getElementById('header-user-name');
+        if (headerUserNameElem) headerUserNameElem.textContent = `${currentUser.firstName} ${currentUser.lastName}`;
         logoutBtns.forEach(btn => btn.style.display = 'flex');
     } else {
         // User is logged out
@@ -645,28 +646,35 @@ document.head.appendChild(styleSheet);
 
 // Theme Toggle Functionality
 function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-btn');
     const body = document.body;
-    const icon = themeToggle ? themeToggle.querySelector('i') : null;
 
-    if (!themeToggle || !icon) return;
+    if (themeToggles.length === 0) return;
 
     // Check for saved theme preference
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
         body.classList.add('dark-theme');
-        icon.classList.replace('fa-moon', 'fa-sun');
+        themeToggles.forEach(toggle => {
+            const icon = toggle.querySelector('i');
+            if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+        });
     }
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-        if (body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            localStorage.setItem('theme', 'light');
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
+            // Update all toggle icons on the page
+            document.querySelectorAll('#theme-toggle i, .theme-btn i').forEach(icon => {
+                if (isDark) {
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    icon.classList.replace('fa-sun', 'fa-moon');
+                }
+            });
+        });
     });
 }
